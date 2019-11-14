@@ -22,6 +22,27 @@ class Admin_model extends CI_Model
         return $this->db->get($this->table)->result();
     }
 
+    function get_count()
+    {
+        $this->db->select('count(*) as jml');
+        return $this->db->get($this->table)->row();
+    }
+
+    function get_dosen()
+    {
+        $this->db->where('level','dosen');
+        return $this->db->get('admin')->result();
+    }
+
+    function get_jmlpengisi($id_matkul,$id_dosen){
+        $this->db->select('count(*) as jmlpengisi');
+        $this->db->join('tb_jawaban','tb_jawaban.id_pertanyaan = tb_pertanyaan.id_pertanyaan','left');
+        $this->db->join('pengajar','pengajar.id = tb_jawaban.id_pengajar','left');
+        $this->db->where('pengajar.id_dosen = '.$id_dosen.' and tb_jawaban.id_matkul = '.$id_matkul);
+        $this->db->group_by('tb_jawaban.id_mahasantri');
+        return $this->db->get('tb_pertanyaan')->num_rows();
+    }
+
     // get data by id
     function get_by_id($id)
     {
@@ -31,28 +52,28 @@ class Admin_model extends CI_Model
     
     // get total rows
     function total_rows($q = NULL) {
-    $this->db->like('id_admin', $q);
-	$this->db->or_like('nama', $q);
-	$this->db->or_like('username', $q);
-	$this->db->or_like('password', $q);
-	$this->db->or_like('email', $q);
-	$this->db->or_like('level', $q);
-    $this->db->or_like('foto', $q);
-	$this->db->from($this->table);
+        $this->db->like('id_admin', $q);
+        $this->db->or_like('nama', $q);
+        $this->db->or_like('username', $q);
+        $this->db->or_like('password', $q);
+        $this->db->or_like('email', $q);
+        $this->db->or_like('level', $q);
+        $this->db->or_like('foto', $q);
+        $this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
-    $this->db->order_by($this->id, $this->order);
-    $this->db->like('id_admin', $q);
-	$this->db->or_like('nama', $q);
-	$this->db->or_like('username', $q);
-	$this->db->or_like('password', $q);
-	$this->db->or_like('email', $q);
-	$this->db->or_like('level', $q);
-    $this->db->or_like('foto', $q);
-	$this->db->limit($limit, $start);
+        $this->db->order_by($this->id, $this->order);
+        $this->db->like('id_admin', $q);
+        $this->db->or_like('nama', $q);
+        $this->db->or_like('username', $q);
+        $this->db->or_like('password', $q);
+        $this->db->or_like('email', $q);
+        $this->db->or_like('level', $q);
+        $this->db->or_like('foto', $q);
+        $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
 

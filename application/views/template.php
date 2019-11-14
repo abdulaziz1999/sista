@@ -1,25 +1,25 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta charset="utf-8" />
-		<title>Ace Admin</title>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>Inventori PT Berkah</title>
 
-		<meta name="description" content="Static &amp; Dynamic Tables" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="description" content="Static &amp; Dynamic Tables" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="<?php echo base_url()?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-		<!-- page specific plugin styles -->
+	<!-- page specific plugin styles -->
 
-		<!-- text fonts -->
-		<link rel="stylesheet" href="<?php echo base_url()?>assets/css/fonts.googleapis.com.css" />
+	<!-- text fonts -->
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/fonts.googleapis.com.css" />
 
-		<!-- ace styles -->
-		<link rel="stylesheet" href="<?php echo base_url()?>assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+	<!-- ace styles -->
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="<?php echo base_url()?>aceadmin/assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
@@ -41,235 +41,261 @@
 		<!--[if lte IE 8]>
 		<script src="<?php echo base_url()?>aceadmin/assets/js/html5shiv.min.js"></script>
 		<script src="<?php echo base_url()?>aceadmin/assets/js/respond.min.js"></script>
-		<![endif]-->
-	</head>
+	<![endif]-->
+</head>
 
-	<body class="skin-3">
-		<div id="navbar" class="navbar navbar-default          ace-save-state">
-			<div class="navbar-container ace-save-state" id="navbar-container">
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
+<body class="no-skin">
+	<div id="navbar" class="navbar navbar-default          ace-save-state">
+		<div class="navbar-container ace-save-state" id="navbar-container">
+			<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+				<span class="sr-only">Toggle sidebar</span>
 
-					<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 
-					<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 
-					<span class="icon-bar"></span>
-				</button>
+				<span class="icon-bar"></span>
+			</button>
 
-				<div class="navbar-header pull-left">
-					<a href="<?= base_url('index.php/dashboard'); ?>" class="navbar-brand">
-						<small>
-							<i class="ace-icon fa fa-university white"></i>
-							Kuisioner Mahasantri
-						</small>
-					</a>
-				</div>
+			<div class="navbar-header pull-left">
+				<a href="<?= base_url('admin'); ?>" class="navbar-brand">
+					<small>
+						<i class="ace-icon fa fa-university white"></i>
+						Inventory
+					</small>
+				</a>
+			</div>
 
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-				<li class="green dropdown-modal">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-								<span class="badge badge-success">2</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-envelope-o"></i>
-									2 Messages
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar">
-										
-										<li>
-											<a href="#" class="clearfix">
-												<img src="<?php echo base_url()?>assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Bob:</span>
-														Nullam quis risus eget urna mollis ornare ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>3:15 pm</span>
-													</span>
-												</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="clearfix">
-												<img src="<?php echo base_url()?>assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
-												<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Kate:</span>
-														Ciao sociis natoque eget urna mollis ornare ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>1:33 pm</span>
-													</span>
-												</span>
-											</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="inbox.html">
-										See all messages
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="light-blue dropdown-modal">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="<?= $this->session->userdata('foto') ?>"  />
-								<span class="user-info">
-									<small>Welcome,</small>
-								<?= $this->session->userdata('nama') ?>
-								</span>
-
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
-
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="<?= base_url('setting'); ?>">
-										<i class="ace-icon fa fa-cog"></i>
-										Settings
-									</a>
-								</li>
-
-								<li>
-									<a href="<?= base_url('profil'); ?>">
-										<i class="ace-icon fa fa-user"></i>
-										Profile
-									</a>
-								</li>
-
-								<li class="divider"></li>
-
-								<li>
-									<a href="<?php echo base_url('login/logout'); ?>">
-										<i class="ace-icon fa fa-power-off"></i>
-										Logout
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div><!-- /.navbar-container -->
-		</div>
-
-		<div class="main-container ace-save-state" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.loadState('main-container')}catch(e){}
-			</script>
-
-			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
-				<script type="text/javascript">
-					try{ace.settings.loadState('sidebar')}catch(e){}
-				</script>
-
-				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large" >
-						<img src="<?= base_url()?>assets/images/foto/petik.png?>" width="150" height="150">
-					</div>
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<img src="<?= base_url()?>assets/images/foto/petik.png?>" width="40" height="33">
-						<!-- <span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span> -->
-					</div>
-				</div><!-- /.sidebar-shortcuts -->
-
-
-				<ul class="nav nav-list">
-					<li class="">
-						<a href="<?= base_url('dashboard'); ?>">
-							<i class="menu-icon fa fa-th-large"></i>
-							<span class="menu-text"> Dashboard </span>
+			<div class="navbar-buttons navbar-header pull-right" role="navigation">
+				<ul class="nav ace-nav">
+					<li class="green dropdown-modal">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+							<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+							<span class="badge badge-success">2</span>
 						</a>
 
-						<b class="arrow"></b>
-					</li>
+						<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+							<li class="dropdown-header">
+								<i class="ace-icon fa fa-envelope-o"></i>
+								2 Messages
+							</li>
 
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-desktop"></i>
-							<span class="menu-text">
-								Quisions
-							</span>
+							<li class="dropdown-content">
+								<ul class="dropdown-menu dropdown-navbar">
+									
+									<li>
+										<a href="#" class="clearfix">
+											<img src="<?php echo base_url()?>assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+											<span class="msg-body">
+												<span class="msg-title">
+													<span class="blue">Bob:</span>
+													Nullam quis risus eget urna mollis ornare ...
+												</span>
 
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
+												<span class="msg-time">
+													<i class="ace-icon fa fa-clock-o"></i>
+													<span>3:15 pm</span>
+												</span>
+											</span>
+										</a>
+									</li>
 
-						<b class="arrow"></b>
+									<li>
+										<a href="#" class="clearfix">
+											<img src="<?php echo base_url()?>assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+											<span class="msg-body">
+												<span class="msg-title">
+													<span class="blue">Kate:</span>
+													Ciao sociis natoque eget urna mollis ornare ...
+												</span>
 
-						<ul class="submenu">
-							<li class="">
-								<a href="<?= base_url('tb_pertanyaan'); ?>">
-									<i class="menu-icon fa fa-caret-right"></i>
+												<span class="msg-time">
+													<i class="ace-icon fa fa-clock-o"></i>
+													<span>1:33 pm</span>
+												</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
 
-									Pertanyaan
-								</a><b class="arrow"></b>
-								<li class="">
-								<a href="<?= base_url('tb_jpertanyaan'); ?>">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Jenis Pertanyaan
-								</a><b class="arrow"></b>
-								<li class="">
-								<a href="<?= base_url('tb_jawaban'); ?>">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Jawaban
+							<li class="dropdown-footer">
+								<a href="inbox.html">
+									See all messages
+									<i class="ace-icon fa fa-arrow-right"></i>
 								</a>
+							</li>
 						</ul>
 					</li>
-					<li class="">
-						<a href="<?= base_url('pengguna'); ?>">
-							<i class="menu-icon fa fa-users"></i>
-							<span class="menu-text">
-								Pengguna
+
+					<li class="light-blue dropdown-modal">
+						<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+							<img class="nav-user-photo" src="<?= $this->session->userdata('foto') ?>"  />
+							<span class="user-info">
+								<small>Welcome,</small>
+								<?= $this->session->userdata('nama') ?>
 							</span>
+
+							<i class="ace-icon fa fa-caret-down"></i>
 						</a>
-						<b class="arrow"></b>
+
+						<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+							<li>
+								<a href="<?= base_url('setting'); ?>">
+									<i class="ace-icon fa fa-cog"></i>
+									Settings
+								</a>
+							</li>
+
+							<li>
+								<a href="<?= base_url('profil'); ?>">
+									<i class="ace-icon fa fa-user"></i>
+									Profile
+								</a>
+							</li>
+
+							<li class="divider"></li>
+
+							<li>
+								<a href="<?php echo base_url('login/logout'); ?>">
+									<i class="ace-icon fa fa-power-off"></i>
+									Logout
+								</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+			</div>
+		</div><!-- /.navbar-container -->
+	</div>
+
+	<div class="main-container ace-save-state" id="main-container">
+		<script type="text/javascript">
+			try{ace.settings.loadState('main-container')}catch(e){}
+		</script>
+
+		<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+			<script type="text/javascript">
+				try{ace.settings.loadState('sidebar')}catch(e){}
+			</script>
+
+			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large" style="background-color: #7FFF00;">
+					<!-- <img  src="<?= base_url()?>assets/images/foto/petik.png?>" width="150" height="150"> -->
+				</div>
+
+				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini" style="background-color: #7FFF00;">
+					<!-- <img src="<?= base_url()?>assets/images/foto/.png?>" width="42" height="37"> -->
+					
+				</div>
+			</div><!-- /.sidebar-shortcuts -->
+
+
+			<ul class="nav nav-list">
+				<li class="">
+					<a href="<?= base_url('admin'); ?>">
+						<i class="menu-icon fa fa-th-large"></i>
+						<span class="menu-text"> Dashboard </span>
+					</a>
+
+					<b class="arrow"></b>
+				</li>
+				<li class="">
+					<a href="#" class="dropdown-toggle">
+						<i class="menu-icon fa fa-desktop"></i>
+						<span class="menu-text">
+							Master Data
+						</span>
+
+						<b class="arrow fa fa-angle-down"></b>
+					</a>
+
+					<b class="arrow"></b>
+
+					<ul class="submenu">
+								<li class="">
+								<a href="<?= base_url('tb_kategori'); ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+										Kategori
+								</a><b class="arrow"></b>
+								<li class="">
+								<a href="<?= base_url('tb_brand'); ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Merk
+								</a><b class="arrow"></b>
+								<li class="">
+									<a href="<?= base_url('tb_satuan'); ?>">
+										<i class="menu-icon fa fa-caret-right"></i>
+										Satuan
+									</a>
+					</ul>
+				</li>
+							<li class="">
+								<a href="<?= base_url('tb_barang'); ?>">
+									<i class="menu-icon fa fa-users"></i>
+									<span class="menu-text">
+										Master Barang
+										<span class="badge badge-info"></span>
+									</span>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="<?= base_url('tb_receiving'); ?>">
+									<i class="menu-icon fa fa-shopping-cart"></i>
+									<span class="menu-text">
+										Receiving/In
+										<span class="badge badge-info"></span>
+									</span>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="<?= base_url('tb_issuing'); ?>">
+									<i class="menu-icon fa fa-truck"></i>
+									<span class="menu-text">
+									Issuing/Out
+									<span class="badge badge-info"></span>
+								</span>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="<?= base_url('tb_stok'); ?>">
+									<i class="menu-icon fa fa-table"></i>
+									<span class="menu-text">
+									Stok
+									<span class="badge badge-info"><?php echo $this->db->get('tb_stok')->num_rows();?></span>
+								</span>
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+					<a href="#" class="dropdown-toggle">
+						<i class="menu-icon fa fa-print"></i>
+						<span class="menu-text">
+							Report
+						</span>
+
+						<b class="arrow fa fa-angle-down"></b>
+					</a>
+
+					<b class="arrow"></b>
+
+					<ul class="submenu">
 					<li class="">
-						<a href="<?= base_url('tb_mahasantri'); ?>">
-							<i class="menu-icon fa fa-graduation-cap"></i>
-							<span class="menu-text">
-								Mahasantri
-							</span>
-						</a>
-						<b class="arrow"></b>
-					</li>
-					<li class="">
-						<a href="<?= base_url('tb_kuisioner'); ?>" >
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Kuisioner </span>
-						</a>
-						<b class="arrow"></b>
-					</li>
-					<!-- <li class="">
-						<a href="<?= base_url('gallery'); ?>">
-							<i class="menu-icon fa fa-picture-o"></i>
-							<span class="menu-text"> Gallery </span>
-						</a>
-						<b class="arrow"></b>
-					</li> -->
+						<li class="">
+								<a href="<?= base_url('c_receiving'); ?>">
+									<i class="menu-icon fa fa-caret-right"></i>
+									 Receiving
+								</a><b class="arrow"></b>
+								<li class="">
+									<a href="<?= base_url('c_issuing'); ?>">
+										<i class="menu-icon fa fa-caret-right"></i>
+									Issuing
+									</a>
+					</ul>
+				</li>
 					<li class="">
 						<a href="<?php echo base_url('login/logout'); ?>">
 							<i class="menu-icon fa fa-sign-out"></i>
@@ -300,13 +326,13 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">Kuisioner</span>
+							PeTIK &copy; 2017-2018 . Abdul Aziz PeTIK - V
 						</span>
 
 						&nbsp; &nbsp;
 						<span class="action-buttons">
-							<a href="#">
+							<a href="">
 								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
 							</a>
 
@@ -337,28 +363,28 @@
 		<!--[if IE]>
 <script src="<?php echo base_url()?>aceadmin/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='<?php echo base_url()?>assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
-		<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	if('ontouchstart' in document.documentElement) document.write("<script src='<?php echo base_url()?>assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 
-		<!-- page specific plugin scripts -->
-		<script src="<?php echo base_url()?>assets/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/jquery.dataTables.bootstrap.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/dataTables.buttons.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/buttons.flash.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/buttons.html5.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/buttons.print.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/buttons.colVis.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/dataTables.select.min.js"></script>
+<!-- page specific plugin scripts -->
+<script src="<?php echo base_url()?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery.dataTables.bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/buttons.flash.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/buttons.html5.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/buttons.print.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/buttons.colVis.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/dataTables.select.min.js"></script>
 
-		<!-- ace scripts -->
-		<script src="<?php echo base_url()?>assets/js/ace-elements.min.js"></script>
-		<script src="<?php echo base_url()?>assets/js/ace.min.js"></script>
+<!-- ace scripts -->
+<script src="<?php echo base_url()?>assets/js/ace-elements.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/ace.min.js"></script>
 
-		<!-- inline scripts related to this page -->
-		<script type="text/javascript">
-			jQuery(function($) {
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+	jQuery(function($) {
 				//initiate dataTables plugin
 				var myTable = 
 				$('#dynamic-table')
@@ -366,9 +392,9 @@
 				.DataTable( {
 					bAutoWidth: false,
 					"aoColumns": [
-					  { "bSortable": false },
-					  null, null,null, null, null,
-					  { "bSortable": false }
+					{ "bSortable": false },
+					null, null,null, null, null,
+					{ "bSortable": false }
 					],
 					"aaSorting": [],
 					
@@ -376,64 +402,64 @@
 					//"bProcessing": true,
 			        //"bServerSide": true,
 			        //"sAjaxSource": "http://127.0.0.1/table.php"	,
-			
+			        
 					//,
 					//"sScrollY": "200px",
 					//"bPaginate": false,
-			
+					
 					//"sScrollX": "100%",
 					//"sScrollXInner": "120%",
 					//"bScrollCollapse": true,
 					//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
 					//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-			
+					
 					//"iDisplayLength": 50
-			
-			
+					
+					
 					select: {
 						style: 'multi'
 					}
-			    } );
-			
+				} );
+				
 				
 				
 				$.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 				
 				new $.fn.dataTable.Buttons( myTable, {
 					buttons: [
-					  {
+					{
 						"extend": "colvis",
 						"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
 						"className": "btn btn-white btn-primary btn-bold",
 						columns: ':not(:first):not(:last)'
-					  },
-					  {
+					},
+					{
 						"extend": "copy",
 						"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
 						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
+					},
+					{
 						"extend": "csv",
 						"text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
 						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
+					},
+					{
 						"extend": "excel",
 						"text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
 						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
+					},
+					{
 						"extend": "pdf",
 						"text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
 						"className": "btn btn-white btn-primary btn-bold"
-					  },
-					  {
+					},
+					{
 						"extend": "print",
 						"text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
 						"className": "btn btn-white btn-primary btn-bold",
 						autoPrint: false,
 						message: 'This print was produced using the Print button for DataTables'
-					  }		  
+					}		  
 					]
 				} );
 				myTable.buttons().container().appendTo( $('.tableTools-container') );
@@ -459,7 +485,7 @@
 					}
 					$('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')			
 				////
-			
+				
 				setTimeout(function() {
 					$($('.tableTools-container')).find('a.dt-button').each(function() {
 						var div = $(this).find(' > div').first();
@@ -482,10 +508,10 @@
 						$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
 					}
 				} );
-			
-			
-			
-			
+				
+				
+				
+				
 				/////////////////////////////////
 				//table checkboxes
 				$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
@@ -507,9 +533,9 @@
 					if(this.checked) myTable.row(row).deselect();
 					else myTable.row(row).select();
 				});
-			
-			
-			
+				
+				
+				
 				$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
 					e.stopImmediatePropagation();
 					e.stopPropagation();
@@ -538,9 +564,9 @@
 					if(this.checked) $row.addClass(active_class);
 					else $row.removeClass(active_class);
 				});
-			
 				
-			
+				
+				
 				/********************************/
 				//add tooltip for small view action buttons in dropdown menu
 				$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
@@ -551,10 +577,10 @@
 					var $parent = $source.closest('table')
 					var off1 = $parent.offset();
 					var w1 = $parent.width();
-			
+					
 					var off2 = $source.offset();
 					//var w2 = $source.width();
-			
+					
 					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
 					return 'left';
 				}
@@ -585,9 +611,9 @@
 				  }
 				).css('padding-top', '12px');
 				*/
-			
-			
+				
+				
 			})
 		</script>
 	</body>
-</html>
+	</html>

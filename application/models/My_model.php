@@ -4,8 +4,8 @@ Class My_model extends CI_Model{
 
     function cek_login($u,$p){
         $pwd = md5($p);
-        $this->db->select('username,password,nama,level');
-        $this->db->from('admin');
+        $this->db->select('*');
+        $this->db->from('pengguna');
         $this->db->where('username',$u);
         $this->db->where('password',$pwd);
         $this->db->limit(1);
@@ -19,5 +19,7 @@ Class My_model extends CI_Model{
         }
         
     }
+
+
 
 }

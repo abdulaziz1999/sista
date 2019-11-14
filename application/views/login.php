@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Login Page - Ace Admin</title>
+	<title>Login KM PeTIK</title>
 
 	<meta name="description" content="User login page" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -88,7 +88,7 @@
 													<span class="lbl"> Remember Me </span>
 												</label>
 
-												<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+												<button type="submit" class="width-35 pull-right btn btn-sm btn-primary" >
 													<i class="ace-icon fa fa-key"></i>
 													<span class="bigger-110">Login</span>
 												</button>
@@ -96,7 +96,10 @@
 
 											<div class="space-4"></div>
 										</fieldset>
-										
+										<!-- untuk menampilkan kata eror -->
+										<?php if (isset($_GET['e'])) {
+											echo "<span style='color:red'>".base64_decode($_GET['e'])."</span>";
+										} ?>
 										
 										<?php echo form_close(); ?>
 
