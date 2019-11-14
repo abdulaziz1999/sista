@@ -9,10 +9,9 @@ class Setting extends CI_Controller{
 		$this->load->model('My_model');
 		$this->load->library('session');
 		
-
-		if ($this->session->userdata('level')!="admin") {
-			redirect('login');
-		}
+		if($this->session->userdata('true') != 'oke'){
+            redirect(base_url());
+        }
  
 	}
 

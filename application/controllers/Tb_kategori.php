@@ -15,6 +15,10 @@ class Tb_kategori extends CI_Controller
         $this->load->helper('form');
         $this->load->model('My_model');
         $this->load->library('session');
+
+        if($this->session->userdata('true') != 'oke'){
+            redirect(base_url());
+        }
     }
 
     public function index()

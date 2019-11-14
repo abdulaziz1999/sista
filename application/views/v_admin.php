@@ -1,118 +1,164 @@
-<html>
+ <html>
 <head>
- <title></title>
+ <title>Dashboard</title>
 </head>
 <body>
 
  			
-
-	<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-						<ul class="breadcrumb">
-							<li>
-								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
-							</li>
-							<li class="active">Dashboard</li>
-						</ul><!-- /.breadcrumb -->
-
-						<div class="nav-search" id="nav-search">
-							
-						</div><!-- /.nav-search -->
-				</div>
-				<br>
-
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="<?= base_url()?>assets/images/foto/ybm1?>">
-      <div class="carousel-caption">
-        PeTIK | YBM PLN
-      </div>
-    </div>
-    <div class="item">
-      <img src="<?= base_url()?>assets/images/foto/2.jpg?>">
-      <div class="carousel-caption">
-        
-      </div>
-    </div>
-    <div class="item">
-      <img src="<?= base_url()?>assets/images/foto/3.jpg?>">
-      <div class="carousel-caption">
-       
-      </div>
-    </div>
-    <!-- isi konten -->
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+                  
+<div class="page-header">
+	<h1>Dashboard<small> <i class="ace-icon fa fa-angle-double-right"></i> Overview &amp; statistic &nbsp;
+		<?php
+				
+		?></small>
+	</h1>
 </div>
-<br>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="alert alert-block alert-success">
+			<button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button>
+			<i class="ace-icon fa fa-check green"></i><strong class="green"> SELAMAT DATANG DI BERKAH INVENTORY SYSTEM<small> (Ver 1.0)</small></strong>. Aplikasi Sistem Informasi Stok Barang Gudang Jangan Lupa Ucapkan Basmalah Sebelum Memulai Aktivitas
+		</div>
+		
+		<div class="space-6"></div>
+		<div class="row">
+			<div class="col-sm-12 infobox-container">
+				<div class="infobox infobox-green infobox-small infobox-dark">
+					<div class="infobox-icon"><i class="ace-icon fa fa-shopping-cart"></i></div>
+					<div class="infobox-data">
+						<div class="infobox-content">Receiving</div>
+						<div class="infobox-content"></div>
+					</div>
+				</div>
+				<div class="infobox infobox-purple infobox-small infobox-dark">
+					<div class="infobox-icon"><i class="ace-icon fa fa-tasks"></i></div>
+					<div class="infobox-data">
+						<div class="infobox-content">Stock</div>
+						<div class="infobox-content"></div>
+					</div>
+				</div>
+				<div class="infobox infobox-grey infobox-small infobox-dark">
+					<div class="infobox-icon"><i class="ace-icon fa fa-truck"></i></div>
+					<div class="infobox-data">
+						<div class="infobox-content">Issuing</div>
+						<div class="infobox-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hr hr32 hr-dotted"></div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="widget-box transparent">
+					<div class="widget-header widget-header-flat">
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-bar-chart-o"></i>Brand</h4>
+						<div class="widget-toolbar">
+							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<div class="widget-main padding-4">
+							<div id="container1" class="col-sm-12" style="height:380px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hr hr32 hr-dotted"></div>
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="widget-box transparent">
+					<div class="widget-header widget-header-flat">
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-star blue"></i>Top 5 Max Stock</h4>
+						<div class="widget-toolbar">
+							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<div class="widget-main no-padding">
+							<table class="table table-bordered table-striped">
+								<thead class="thin-border-bottom">
+									<tr>
+										<th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th>
+										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
+										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
+										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
+									</tr>
+								</thead>
+								<tbody>
+								
+									<tr>
+										<td>
+											
+										</td>
+										<td></td>
+										<td></td>
+										<td class="hidden-480 center"><i class="ace-icon fa fa-star-o green"> </i></td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="hr hr32 hr-dotted"></div>
+				<div class="widget-box transparent">
+					<div class="widget-header widget-header-flat">
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-star orange"></i>Top 5 Min Stock</h4>
+						<div class="widget-toolbar">
+							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<div class="widget-main no-padding">
+							<table class="table table-bordered table-striped">
+								<thead class="thin-border-bottom">
+									<tr>
+										<th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th>
+										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
+										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
+										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
+									</tr>
+								</thead>
+								<tbody>
+									
+									<tr>
+										<td>
+										</td>
+										<td></td>
+										<td></td>
+										<td class="hidden-480 center"><i class="ace-icon fa fa-star-o green"> </i></td>
+									</tr>
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-7">
+				<div class="widget-box transparent">
+					<div class="widget-header widget-header-flat">
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-bar-chart-o"></i>Kategori</h4>
+						<div class="widget-toolbar">
+							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<div class="widget-main padding-4">
+							<div id="container" class="col-sm-12" style="height:380px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-                  <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-primary text-center no-boder bg-color-brown">
-                            <div class="panel-body">
-                            	<a href="<?= base_url('tb_mahasantri'); ?>">
-                                <i class="fa fa-users fa-5x"></a></i>
-                                <h3></h3>
-                            </div>
-                            <div class="panel-footer back-footer-brown">
-                              <b>Mahasantri</b>
-                            </div>
-                        </div>
-                  </div>
-                  <div class="col-md-3 col-sm-12 col-xs-12">
+			 
+		<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
+		
 
-                        <div class="panel panel-primary text-center no-boder bg-color-green">
-                            <div class="panel-body">
-                            	<a href="<?= base_url('pengguna'); ?>">
-                                <i class="fa fa-bar-chart-o fa-5x"></a></i>
-                                <h3></h3>
-                            </div>
-                            <div class="panel-footer back-footer-green">
-                                <b>Pengguna</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-primary text-center no-boder bg-color-blue">
-                            <div class="panel-body">
-                            	<a href="<?= base_url('matkul'); ?>">
-                                <i class="fa fa-book fa-5x"></a></i>
-                                <h3></h3>
-                            </div>
-                            <div class="panel-footer back-footer-blue">
-                                <b>Mata Kuliah</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div class="panel panel-primary text-center no-boder bg-color-red">
-                            <div class="panel-body">
-                            	<a href="<?= base_url('pengajar'); ?>">
-                                <i class="fa fa fa-graduation-cap fa-5x"></a></i>
-                                <h3></h3>
-                            </div>
-                            <div class="panel-footer back-footer-red">
-                            	<b>Pengajar</b>
-                            </div>
-                        </div>
-                    </div>
 
  
 </body>

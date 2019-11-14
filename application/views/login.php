@@ -35,7 +35,7 @@
 	<![endif]-->
 </head>
 
-<body class="login-layout light-login">
+<body class="login-layout blur-login">
 	<div class="main-container">
 		<div class="main-content">
 			<div class="row">
@@ -44,10 +44,10 @@
 						<div class="center">
 							<h1>
 								<i class="ace-icon fa fa-leaf green"></i>
-								<span class="red">Kuisioner</span>
+								<span class="red">Inventory</span>
 								<span class="black" id="id-text2">Application</span>
 							</h1>
-							<h4 class="blue" id="id-company-text">&copy; Pesantren Teknologi Informasi dan Komunikasi </h4>
+							<h4 class="blue" id="id-company-text">&copy; PT Berkah Sejahtera </h4>
 						</div>
 
 						<div class="space-6"></div>
@@ -58,7 +58,7 @@
 									<div class="widget-main">
 										<h4 class="header blue lighter bigger">
 											<i class="ace-icon fa fa-university green"></i>
-											Pesantren TIK
+											PT Berkah Sejahtera
 
 										</h4>
 
