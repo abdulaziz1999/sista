@@ -21,13 +21,13 @@
             <td><input type="text" class="form-control" name="remarks" id="remarks" placeholder="Remarks"  value="<?php echo $remarks; ?>" />
         </td>
 	    <input type="hidden" name="id_receiving" value="<?php echo $id_receiving; ?>" /> 
-	    <tr><td colspan='2'><button type="submit"  class="btn btn-primary"><?php echo $button ?></button> 
+	    <tr><td colspan='2'><button type="submit"  class="btn btn-sm btn-round btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('tb_receiving') ?>" class="btn btn-default">Cancel</a></td></tr>
 	
     </table></form>
   
-                  <button type="button" class="btn bt btn-primary" data-toggle="modal" data-target="#myModal" class="btn btn-primary round btn-sm">tambah</button>
-                  <br>
+                  <button type="button" class="btn btn-sm btn-round btn-primary" data-toggle="modal" data-target="#myModal" class="btn btn-primary round btn-sm">tambah</button>
+                  <br><br>
                   <table class="table table-bordered table-striped" id="mytable">
                           <thead>
                               <tr>
