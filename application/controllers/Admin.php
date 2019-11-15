@@ -16,7 +16,7 @@ class Admin extends CI_Controller{
     }
 
 	function index(){
-		$this->output->enable_profiler(true);
+		// $this->output->enable_profiler(true);
 		$this->template->load('template','v_admin');
 	}
 }

@@ -23,7 +23,7 @@ class Laporan_issuing extends CI_Controller{
             $end = date('Y-m-d h:i:s');
         }
 
-        $this->template->load('template', 'laporan/laporan');
+        $this->template->load('template', 'laporan/laporan_issuing');
     }
 
     function ajax($s, $e){

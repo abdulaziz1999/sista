@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Login KM PeTIK</title>
+	<title>Inventory Application</title>
 
 	<meta name="description" content="User login page" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -68,7 +68,7 @@
 										<fieldset>
 											<label class="block clearfix">
 												<span class="block input-icon input-icon-right">
-													<input name="username" type="text" class="form-control"  placeholder="Username" required/>
+													<input name="username" type="text" class="form-control" autocomplete="off" placeholder="Username" required/>
 													<i class="ace-icon fa fa-user"></i>
 												</span>
 											</label>

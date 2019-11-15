@@ -221,7 +221,7 @@
 								<li class="">
 								<a href="<?= base_url('tb_brand'); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Merk
+									Merk/Brand
 								</a><b class="arrow"></b>
 								<li class="">
 									<a href="<?= base_url('tb_satuan'); ?>">
@@ -235,7 +235,7 @@
 									<i class="menu-icon fa fa-users"></i>
 									<span class="menu-text">
 										Master Barang
-										<span class="badge badge-info"></span>
+										<span class="badge badge-success"><?php echo $this->db->get('tb_barang')->num_rows();?></span>
 									</span>
 								</a>
 								<b class="arrow"></b>
@@ -285,12 +285,12 @@
 					<ul class="submenu">
 					<li class="">
 						<li class="">
-								<a href="<?= base_url('c_receiving'); ?>">
+								<a href="<?= base_url('laporan'); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									 Receiving
 								</a><b class="arrow"></b>
 								<li class="">
-									<a href="<?= base_url('c_issuing'); ?>">
+									<a href="<?= base_url('laporan_issuing'); ?>">
 										<i class="menu-icon fa fa-caret-right"></i>
 									Issuing
 									</a>
