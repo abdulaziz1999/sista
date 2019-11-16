@@ -382,6 +382,79 @@
 <script src="<?php echo base_url()?>assets/js/ace-elements.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/ace.min.js"></script>
 
+<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
+		<script type="text/javascript">
+				var chart1; // globally available
+					$(document).ready(function() {
+						chart1 = new Highcharts.Chart({
+							chart: {
+								renderTo: 'container',
+								type: 'column'
+							},   
+							title: {
+								text: 'Item Barang Berdasarkan Kategori'
+							},
+							xAxis: {
+								categories: ['Kategori']
+							},
+							yAxis: {
+								title: {
+									text: 'Jumlah Item'
+								}
+							},
+							series:             
+								[
+								{
+									name: 'Susu',
+									data: [90]
+								},
+								
+								]
+						});
+					});	
+			</script>
+			<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
+		<script type="text/javascript">
+				var chart1; // globally available
+					$(document).ready(function() {
+						chart1 = new Highcharts.Chart({
+							chart: {
+								renderTo: 'container1',
+								type: 'column'
+							},   
+							title: {
+								text: 'Item Barang Berdasarkan Brand'
+							},
+							xAxis: {
+								categories: ['Brand','Agar','Kecap','coba']
+							},
+							yAxis: {
+								title: {
+									text: 'Jumlah Item'
+								}
+							},
+							series:             
+								[
+								{
+									name: 'Susu',
+									data: [70],
+								},
+								{
+									name: 'Agar',
+									data: [90],
+								},
+								{
+									name: 'Kecap',
+									data: [40],
+								},
+								{
+									name: 'Coba',
+									data: [90],
+								},
+								]
+						});
+					});	
+			</script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
 	jQuery(function($) {

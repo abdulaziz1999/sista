@@ -22,7 +22,7 @@
         </td>
 	    <input type="hidden" name="id_issuing" value="<?php echo $id_issuing; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-sm btn-round btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('tb_issuing') ?>" class="btn btn-sm btn-round btn-default">Cancel</a></td></tr>
+	    <a href="<?php echo site_url('tb_issuing') ?>" class="btn btn-sm btn-round btn-default">Kembali</a></td></tr>
 	
     </table>
     </form>
@@ -85,7 +85,10 @@
                         <select class="form-control col-md-12" type="text" name="barang" required>
                               <option value="" disabled></option>
                               <?php foreach($barang as $row){?>
-                              <option value="<?= $row->id_barang?>" ><?= $row->nama_barang?></option>
+                              <option value="<?= $row->id_barang?>" >
+                              <?= $row->nama_barang?>_<?= $this->db->get_where('tb_stok',['id_barang' => $row->id_barang])->row()->stok?> 
+                              <?php $s = $this->db->get_where('tb_barang',['id_barang' => $row->id_barang])->row()->satuan; echo $this->db->get_where('tb_satuan',['id_satuan' => $s])->row()->nama_satuan;?>
+                              </option>
                               <?php }?>
                         </select>
                     </div>
@@ -101,8 +104,8 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="submit" class="btn btn-success">Save</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-sm btn-round btn-success">Save</button>
+              <button type="button" class="btn btn-sm btn-round btn-danger" data-dismiss="modal">Close</button>
             </div>
         </form>    
     </div>

@@ -7,21 +7,55 @@
  			
                   
 <div class="page-header">
-	<h1>Dashboard<small> <i class="ace-icon fa fa-angle-double-right"></i> Overview &amp; statistic &nbsp;
-		<?php
-				
-		?></small>
-	</h1>
+	<marquee behavior="" direction=""><strong><h1>Dashboard Inventory PT Berkah Sejahtera</h1></strong></marquee>
 </div>
 <div class="row">
 	<div class="col-xs-12">
-		<div class="alert alert-block alert-success">
+		<!-- <div class="alert alert-block alert-success">
 			<button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button>
 			<i class="ace-icon fa fa-check green"></i><strong class="green"> SELAMAT DATANG DI BERKAH INVENTORY SYSTEM<small> (Ver 1.0)</small></strong>. Aplikasi Sistem Informasi Stok Barang Gudang Jangan Lupa Ucapkan Basmalah Sebelum Memulai Aktivitas
+		--></div> 
+	<div class="main-container ace-save-state">
+		<div class="main-content-inner">
+			<div class="container">
+							<!-- Isinya Sekolah -->
+							<div class="row">
+								<div class="col-sm-md-12">
+									<div class="row">
+										<div class="space-6"></div>
+
+										<div class="col-sm-md-12" style="margin-bottom: 50px;">
+												<div class="container" style="margin-left: 0px;">
+														<div class="col-sm-4 bg-primary text-center">
+															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
+															<h1><strong></strong></h1>
+															<br>
+															<h4><strong>JUMLAH SELURUH SANTRI</strong></h4>
+															<br>
+														</div>
+														<div class="col-sm-4 bg-primary text-center">
+															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
+															<h1><strong></strong></h1>
+															<br>
+															<h4><strong>JUMLAH SANTRI PUTRA</strong></h4>
+															<br>
+														</div>
+														<div class="col-sm-4 bg-primary text-center">
+															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
+															<h1><strong></strong></h1>
+															<br>
+															<h4><strong>JUMLAH SANTRI PUTRI</strong></h4>
+															<br>
+														</div>
+												</div>
+										</div>
+									</div><!-- /.row -->
+								</div>
+			</div>
 		</div>
-		
+	</div>
 		<div class="space-6"></div>
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-sm-12 infobox-container">
 				<div class="infobox infobox-green infobox-small infobox-dark">
 					<div class="infobox-icon"><i class="ace-icon fa fa-shopping-cart"></i></div>
@@ -45,10 +79,10 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="hr hr32 hr-dotted"></div>
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-6">
 				<div class="widget-box transparent">
 					<div class="widget-header widget-header-flat">
 						<h4 class="widget-title lighter"><i class="ace-icon fa fa-bar-chart-o"></i>Brand</h4>
@@ -63,80 +97,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="hr hr32 hr-dotted"></div>
-		<div class="row">
-			<div class="col-sm-5">
-				<div class="widget-box transparent">
-					<div class="widget-header widget-header-flat">
-						<h4 class="widget-title lighter"><i class="ace-icon fa fa-star blue"></i>Top 5 Max Stock</h4>
-						<div class="widget-toolbar">
-							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
-						</div>
-					</div>
-					<div class="widget-body">
-						<div class="widget-main no-padding">
-							<table class="table table-bordered table-striped">
-								<thead class="thin-border-bottom">
-									<tr>
-										<th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th>
-										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
-										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
-										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
-									</tr>
-								</thead>
-								<tbody>
-								
-									<tr>
-										<td>
-											
-										</td>
-										<td></td>
-										<td></td>
-										<td class="hidden-480 center"><i class="ace-icon fa fa-star-o green"> </i></td>
-									</tr>
-									
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="hr hr32 hr-dotted"></div>
-				<div class="widget-box transparent">
-					<div class="widget-header widget-header-flat">
-						<h4 class="widget-title lighter"><i class="ace-icon fa fa-star orange"></i>Top 5 Min Stock</h4>
-						<div class="widget-toolbar">
-							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
-						</div>
-					</div>
-					<div class="widget-body">
-						<div class="widget-main no-padding">
-							<table class="table table-bordered table-striped">
-								<thead class="thin-border-bottom">
-									<tr>
-										<th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th>
-										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
-										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
-										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
-									</tr>
-								</thead>
-								<tbody>
-									
-									<tr>
-										<td>
-										</td>
-										<td></td>
-										<td></td>
-										<td class="hidden-480 center"><i class="ace-icon fa fa-star-o green"> </i></td>
-									</tr>
-								
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-7">
+			<div class="col-sm-6">
 				<div class="widget-box transparent">
 					<div class="widget-header widget-header-flat">
 						<h4 class="widget-title lighter"><i class="ace-icon fa fa-bar-chart-o"></i>Kategori</h4>
@@ -152,11 +113,86 @@
 				</div>
 			</div>
 		</div>
+		<div class="hr hr32 hr-dotted"></div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="widget-box transparent">
+					<div class="widget-header widget-header-flat">
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-star blue"></i>Top 5 Max Stock</h4>
+						<div class="widget-toolbar">
+							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<div class="widget-main no-padding">
+							<table class="table table-bordered table-striped">
+								<thead class="thin-border-bottom">
+									<tr>
+										<!-- <th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th> -->
+										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
+										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
+										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
+									</tr>
+								</thead>
+								<tbody>
+								
+									<tr>
+										<td></td>
+										<td></td>
+										<td class="hidden-480 center">
+										<i class="ace-icon fa fa-arrow-up green icon-animated-vertical"></i>
+										<i class="ace-icon fa fa-arrow-up green icon-animated-vertical"></i>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="hr hr32 hr-dotted"></div> -->
+			</div>
+			<div class="col-sm-6">
+			  <div class="widget-box transparent">
+					<div class="widget-header widget-header-flat">
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-star orange"></i>Top 5 Min Stock</h4>
+						<div class="widget-toolbar">
+							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<div class="widget-main no-padding">
+							<table class="table table-bordered table-striped">
+								<thead class="thin-border-bottom">
+									<tr>
+										<!-- <th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th> -->
+										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
+										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
+										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
+									</tr>
+								</thead>
+								<tbody>
+									
+									<tr>
+										<td></td>
+										<td></td>
+										<td class="hidden-480 center">
+										<i class="ace-icon fa fa-arrow-down red icon-animated-vertical"></i>
+										<i class="ace-icon fa fa-arrow-down red icon-animated-vertical"></i>
+										</td>
+									</tr>
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			 </div>
+		</div>
 	</div>
 </div>
 
 			 
-		<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
 		
 
 
