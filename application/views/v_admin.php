@@ -28,23 +28,23 @@
 												<div class="container" style="margin-left: 0px;">
 														<div class="col-sm-4 bg-primary text-center">
 															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
-															<h1><strong></strong></h1>
+															<h1><strong>99</strong></h1>
 															<br>
-															<h4><strong>JUMLAH SELURUH SANTRI</strong></h4>
-															<br>
-														</div>
-														<div class="col-sm-4 bg-primary text-center">
-															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
-															<h1><strong></strong></h1>
-															<br>
-															<h4><strong>JUMLAH SANTRI PUTRA</strong></h4>
+															<h4><strong>BARANG KELUAR HARI INI</strong></h4>
 															<br>
 														</div>
 														<div class="col-sm-4 bg-primary text-center">
 															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
-															<h1><strong></strong></h1>
+															<h1><strong>99</strong></h1>
 															<br>
-															<h4><strong>JUMLAH SANTRI PUTRI</strong></h4>
+															<h4><strong>JUMLAH BARANG</strong></h4>
+															<br>
+														</div>
+														<div class="col-sm-4 bg-primary text-center">
+															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
+															<h1><strong>99</strong></h1>
+															<br>
+															<h4><strong>BARANG MASUK HARI INI</strong></h4>
 															<br>
 														</div>
 												</div>
@@ -80,7 +80,7 @@
 				</div>
 			</div>
 		</div> -->
-		<div class="hr hr32 hr-dotted"></div>
+		<div class="hr hr32 hr-line"></div>
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="widget-box transparent">
@@ -113,7 +113,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="hr hr32 hr-dotted"></div>
+		<div class="hr hr32 hr-line"></div>
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="widget-box transparent">
@@ -129,7 +129,7 @@
 								<thead class="thin-border-bottom">
 									<tr>
 										<!-- <th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th> -->
-										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
+										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i>Nama Barang</th>
 										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
 										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
 									</tr>
@@ -166,7 +166,7 @@
 								<thead class="thin-border-bottom">
 									<tr>
 										<!-- <th width="25%"><i class="ace-icon fa fa-lock blue"></i> Part Number</th> -->
-										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i> Deskripsi</th>
+										<th width="45%"><i class="ace-icon fa fa-caret-right blue"></i>Nama Barang</th>
 										<th width="15%"><i class="ace-icon fa fa-caret-right blue"></i> Stock</th>
 										<th width="15%" class="hidden-480"><i class="ace-icon fa fa-caret-right blue"></i> Rank</th>
 									</tr>

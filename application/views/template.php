@@ -192,7 +192,7 @@
 
 
 			<ul class="nav nav-list">
-				<li class="">
+				<li class="<?php if($this->uri->segment(1) == 'admin'){ echo "active"; }else{ echo "";}?>">
 					<a href="<?= base_url('admin'); ?>">
 						<i class="menu-icon fa fa-th-large"></i>
 						<span class="menu-text"> Dashboard </span>
@@ -200,7 +200,7 @@
 
 					<b class="arrow"></b>
 				</li>
-				<li class="">
+				<li class="<?php if($this->uri->segment(1) == 'tb_kategori'){ echo "active open"; }elseif($this->uri->segment(1) == 'tb_brand'){ echo "active open"; }elseif($this->uri->segment(1) == 'tb_satuan'){ echo "active open"; }else{ echo "";}?>">
 					<a href="#" class="dropdown-toggle">
 						<i class="menu-icon fa fa-desktop"></i>
 						<span class="menu-text">
@@ -213,24 +213,24 @@
 					<b class="arrow"></b>
 
 					<ul class="submenu">
-								<li class="">
+								<li class="<?php if($this->uri->segment(1) == 'tb_kategori'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('tb_kategori'); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 										Kategori
 								</a><b class="arrow"></b>
-								<li class="">
+								<li class="<?php if($this->uri->segment(1) == 'tb_brand'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('tb_brand'); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Merk/Brand
 								</a><b class="arrow"></b>
-								<li class="">
+								<li class="<?php if($this->uri->segment(1) == 'tb_satuan'){ echo "active"; }else{ echo "";}?>">
 									<a href="<?= base_url('tb_satuan'); ?>">
 										<i class="menu-icon fa fa-caret-right"></i>
 										Satuan
 									</a>
 					</ul>
 				</li>
-							<li class="">
+							<li class="<?php if($this->uri->segment(1) == 'tb_barang'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('tb_barang'); ?>">
 									<i class="menu-icon fa fa-users"></i>
 									<span class="menu-text">
@@ -240,7 +240,7 @@
 								</a>
 								<b class="arrow"></b>
 							</li>
-							<li class="">
+							<li class="<?php if($this->uri->segment(1) == 'tb_receiving'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('tb_receiving'); ?>">
 									<i class="menu-icon fa fa-shopping-cart"></i>
 									<span class="menu-text">
@@ -250,7 +250,7 @@
 								</a>
 								<b class="arrow"></b>
 							</li>
-							<li class="">
+							<li class="<?php if($this->uri->segment(1) == 'tb_issuing'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('tb_issuing'); ?>">
 									<i class="menu-icon fa fa-truck"></i>
 									<span class="menu-text">
@@ -260,7 +260,7 @@
 								</a>
 								<b class="arrow"></b>
 							</li>
-							<li class="">
+							<li class="<?php if($this->uri->segment(1) == 'tb_stok'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('tb_stok'); ?>">
 									<i class="menu-icon fa fa-table"></i>
 									<span class="menu-text">
@@ -270,26 +270,24 @@
 								</a>
 								<b class="arrow"></b>
 							</li>
-							<li class="">
-					<a href="#" class="dropdown-toggle">
+							<li class="<?php if($this->uri->segment(1) == 'laporan'){ echo "active open"; }elseif($this->uri->segment(1) == 'laporan_issuing'){ echo "active open"; }else{ echo "";}?>">
+					<a href="#"  class="dropdown-toggle">
 						<i class="menu-icon fa fa-print"></i>
 						<span class="menu-text">
 							Report
 						</span>
-
 						<b class="arrow fa fa-angle-down"></b>
 					</a>
-
 					<b class="arrow"></b>
 
 					<ul class="submenu">
 					<li class="">
-						<li class="">
+						<li class="<?php if($this->uri->segment(1) == 'laporan'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('laporan'); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									 Receiving
 								</a><b class="arrow"></b>
-								<li class="">
+								<li class="<?php if($this->uri->segment(1) == 'laporan_issuing'){ echo "active"; }else{ echo "";}?>">
 									<a href="<?= base_url('laporan_issuing'); ?>">
 										<i class="menu-icon fa fa-caret-right"></i>
 									Issuing
