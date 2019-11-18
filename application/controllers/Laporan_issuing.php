@@ -30,15 +30,13 @@ class Laporan_issuing extends CI_Controller{
         $draw 	= intval($this->input->get("draw"));
         $start 	= intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
-        
-        $sd = new DateTime($s);
-        $ed = new DateTime($e);
-
-        $this->db->where('waktu >=',date('Y-m-d h:i:s', $sd->getTimestamp()));
-		$this->db->where('waktu <=',date('Y-m-d h:i:s', $ed->getTimestamp()));
-		$this->db->where(['isi !=' => NULL]);
-        $this->db->order_by('id','desc');
-        $get =	$this->db->get('pengaduan2');
+               
+        $this->db->join('tb_issuing_item i','tb_barang.id_barang = i.id_barang');
+         $this->db->join('tb_issuing i2','i.id_issuing = i2.id_issuing');
+        $this->db->where('tgl >=', $s);
+		$this->db->where('tgl <=', $e);
+        // $this->db->order_by('id','desc');
+        $get =	$this->db->get('tb_barang');
 
         $data = array();
         $no = 1;
@@ -46,12 +44,12 @@ class Laporan_issuing extends CI_Controller{
         foreach($get->result() as $row){
             $data[] = [
                 $no++,
-                $row->isi,
-                $row->klas,
-                $row->klaskhusus,
-                $row->nohp,
-                $row->waktu,
-                $row->status
+                $row->tgl,
+                $row->no_ref,
+                $row->nama_barang,
+                $row->remarks,
+                $row->jumlah,
+                $row->picker
             ];
         }
 
@@ -65,4 +63,5 @@ class Laporan_issuing extends CI_Controller{
 		echo json_encode($output);
         exit();
     }
+
 }

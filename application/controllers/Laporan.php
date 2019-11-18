@@ -11,8 +11,6 @@ class Laporan extends CI_Controller{
     
 
     function index(){
-        // $data['status'] = $this->Pengaduan2_model->get_st()->s;
-
         $start = $this->input->get('s', TRUE);
         $end = $this->input->get('e', TRUE);
 
@@ -23,6 +21,7 @@ class Laporan extends CI_Controller{
             $end = date('Y-m-d h:i:s');
         }
 
+        $this->output->enable_profiler(true);
         $this->template->load('template', 'laporan/laporan');
     }
 
@@ -30,15 +29,13 @@ class Laporan extends CI_Controller{
         $draw 	= intval($this->input->get("draw"));
         $start 	= intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
-        
-        $sd = new DateTime($s);
-        $ed = new DateTime($e);
-
-        $this->db->where('waktu >=',date('Y-m-d h:i:s', $sd->getTimestamp()));
-		$this->db->where('waktu <=',date('Y-m-d h:i:s', $ed->getTimestamp()));
-		$this->db->where(['isi !=' => NULL]);
-        $this->db->order_by('id','desc');
-        $get =	$this->db->get('pengaduan2');
+               
+        $this->db->join('tb_receiving_item r','tb_barang.id_barang = r.id_barang');
+        $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+        $this->db->where('tgl >=', $s);
+		$this->db->where('tgl <=', $e);
+        // $this->db->order_by('id','desc');
+        $get =	$this->db->get('tb_barang');
 
         $data = array();
         $no = 1;
@@ -46,12 +43,12 @@ class Laporan extends CI_Controller{
         foreach($get->result() as $row){
             $data[] = [
                 $no++,
-                $row->isi,
-                $row->klas,
-                $row->klaskhusus,
-                $row->nohp,
-                $row->waktu,
-                $row->status
+                $row->tgl,
+                $row->no_ref,
+                $row->nama_barang,
+                $row->remarks,
+                $row->jumlah,
+                $row->supplier
             ];
         }
 
@@ -64,5 +61,31 @@ class Laporan extends CI_Controller{
 		
 		echo json_encode($output);
         exit();
+    }
+
+     function data(){
+         $this->db->select('*');
+         $this->db->from('tb_barang b');
+         $this->db->join('tb_issuing_item i','b.id_barang = i.id_barang');
+         $this->db->join('tb_issuing i2','i.id_issuing = i2.id_issuing');
+         $data = $this->db->get()->result();
+         echo "<pre>"; print_r($data); echo "</pre>";
+         $this->output->enable_profiler(true);
+     }
+
+     function data2($s,$e){
+        // $this->db->select('*');
+        // $this->db->from('tb_barang b');
+        // $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
+        // $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+        $this->db->select('*');
+        $this->db->from('tb_barang b');
+        $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
+        $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+        $this->db->where('tgl >=',date('Y-m-d h:i:s', $s->getTimestamp()));
+		$this->db->where('tgl <=',date('Y-m-d h:i:s', $e->getTimestamp()));
+        $data = $this->db->get()->result();
+        echo "<pre>"; print_r($data); echo "</pre>";
+        $this->output->enable_profiler(true);
     }
 }

@@ -47,19 +47,19 @@
                 <div class="col-xs-12" style="padding-top: 15px">
                     <div class="clearfix">
 						<div class="table-header">
-							Laporan Pengaduan : <?= $this->input->get('s') ." - ". $this->input->get('e')?>
+                            Laporan Inventory : <?= $this->input->get('s') ." - ". $this->input->get('e')?>
 						</div>
                         <div class="table-responsive">
                             <table class="table table-hover table-sm" id="table">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>isi</th> 
-                                        <th>Klasifikasi</th>
-                                        <th>Klasifikasi Khusus</th>
-                                        <th>No Hp</th>
-                                        <th>Waktu</th>
-                                        <th>Status</th>
+                                        <th>Tanggal</th> 
+                                        <th>No Ref</th>
+                                        <th>Nama Barang</th>
+                                        <th>Remarks</th>
+                                        <th>Jumlah</th>
+                                        <th>Supplier</th>
                                     </tr>
                                 </thead>
                             </table>

@@ -324,8 +324,8 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Kuisioner</span>
-							PeTIK &copy; 2017-2018 . Abdul Aziz PeTIK - V
+							<span class="blue bolder">Inventory System</span>
+							PT Berkah &copy; <?= date('Y')?> . Abdul Aziz
 						</span>
 
 						&nbsp; &nbsp;
@@ -380,6 +380,7 @@
 <script src="<?php echo base_url()?>assets/js/ace-elements.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/ace.min.js"></script>
 
+<?php if($this->uri->segment(1) == "admin"): ?>
 <script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
 		<script type="text/javascript">
 				var chart1; // globally available
@@ -453,6 +454,47 @@
 						});
 					});	
 			</script>
+<?php endif;?>			
+		<?php if($this->uri->segment(1) == "laporan"): ?>
+			<?php if($this->input->get('s', TRUE) != NULL): ?>
+			<script>
+			$(document).ready(function(){
+				$('#table').dataTable({
+					dom: 'Bfrtip',
+					buttons: [
+					  	  
+					],
+					ajax:'<?php echo base_url('') ?>laporan/ajax/<?= $this->input->get('s', TRUE) ."/". $this->input->get('e', TRUE) ?>',
+					scrollY:400,
+					info :false,
+					deferRender:true,
+					scroller:true,
+					searching:true,
+				});
+			});
+			</script>
+			<?php endif; ?>
+		<?php endif; ?>
+		<?php if($this->uri->segment(1) == "laporan_issuing"): ?>
+			<?php if($this->input->get('s', TRUE) != NULL): ?>
+			<script>
+			$(document).ready(function(){
+				$('#table').dataTable({
+					dom: 'Bfrtip',
+					buttons: [
+					  	  
+					],
+					ajax:'<?php echo base_url('') ?>laporan_issuing/ajax/<?= $this->input->get('s', TRUE) ."/". $this->input->get('e', TRUE) ?>',
+					scrollY:400,
+					info :false,
+					deferRender:true,
+					scroller:true,
+					searching:true,
+				});
+			});
+			</script>
+			<?php endif; ?>
+		<?php endif; ?>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
 	jQuery(function($) {
@@ -685,6 +727,9 @@
 				
 				
 			})
-		</script>
+</script>
+
+		
+
 	</body>
 	</html>
