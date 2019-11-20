@@ -267,7 +267,7 @@ class Tb_receiving extends CI_Controller
             'start' => 0
         );
         
-        $this->load->view('receiving/tb_receiving_doc',$data);
+        $this->load->view('receiving/tb_receiving_pdf',$data);
     }
 
     public function pdf_rev()

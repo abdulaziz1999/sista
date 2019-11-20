@@ -7,12 +7,13 @@ class Laporan_issuing extends CI_Controller{
         $this->load->helper('form');
         $this->load->model('My_model');
         $this->load->library('session');
+        if($this->session->userdata('true') != 'oke'){
+            redirect(base_url());
+        }
       
     }
 
     function index(){
-        // $data['status'] = $this->Pengaduan2_model->get_st()->s;
-
         $start = $this->input->get('s', TRUE);
         $end = $this->input->get('e', TRUE);
 
@@ -35,7 +36,6 @@ class Laporan_issuing extends CI_Controller{
          $this->db->join('tb_issuing i2','i.id_issuing = i2.id_issuing');
         $this->db->where('tgl >=', $s);
 		$this->db->where('tgl <=', $e);
-        // $this->db->order_by('id','desc');
         $get =	$this->db->get('tb_barang');
 
         $data = array();

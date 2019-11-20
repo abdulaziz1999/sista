@@ -325,7 +325,7 @@
 					<div class="footer-content">
 						<span class="bigger-120">
 							<span class="blue bolder">Inventory System</span>
-							PT Berkah &copy; <?= date('Y')?> . Abdul Aziz
+							PT Berkah &copy; <?= date('Y')?>
 						</span>
 
 						&nbsp; &nbsp;

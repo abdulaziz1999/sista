@@ -7,6 +7,9 @@ class Laporan extends CI_Controller{
             $this->load->helper('form');
             $this->load->model('My_model');
             $this->load->library('session');
+            if($this->session->userdata('true') != 'oke'){
+                redirect(base_url());
+            }
         }
     
 
@@ -21,7 +24,6 @@ class Laporan extends CI_Controller{
             $end = date('Y-m-d h:i:s');
         }
 
-        $this->output->enable_profiler(true);
         $this->template->load('template', 'laporan/laporan');
     }
 
@@ -34,7 +36,6 @@ class Laporan extends CI_Controller{
         $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
         $this->db->where('tgl >=', $s);
 		$this->db->where('tgl <=', $e);
-        // $this->db->order_by('id','desc');
         $get =	$this->db->get('tb_barang');
 
         $data = array();
@@ -61,31 +62,17 @@ class Laporan extends CI_Controller{
 		
 		echo json_encode($output);
         exit();
-    }
+    } 
 
-     function data(){
-         $this->db->select('*');
-         $this->db->from('tb_barang b');
-         $this->db->join('tb_issuing_item i','b.id_barang = i.id_barang');
-         $this->db->join('tb_issuing i2','i.id_issuing = i2.id_issuing');
-         $data = $this->db->get()->result();
-         echo "<pre>"; print_r($data); echo "</pre>";
-         $this->output->enable_profiler(true);
-     }
-
-     function data2($s,$e){
-        // $this->db->select('*');
-        // $this->db->from('tb_barang b');
-        // $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
-        // $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+     function receiving_report($s,$e){
         $this->db->select('*');
         $this->db->from('tb_barang b');
         $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
         $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
-        $this->db->where('tgl >=',date('Y-m-d h:i:s', $s->getTimestamp()));
-		$this->db->where('tgl <=',date('Y-m-d h:i:s', $e->getTimestamp()));
+        $this->db->where('tgl >=', $s);
+		$this->db->where('tgl <=', $e);
         $data = $this->db->get()->result();
-        echo "<pre>"; print_r($data); echo "</pre>";
-        $this->output->enable_profiler(true);
+        // echo "<pre>"; print_r($data); echo "</pre>";
+        // $this->output->enable_profiler(true);
     }
 }

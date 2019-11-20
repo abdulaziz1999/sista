@@ -29,14 +29,15 @@
                                                 <input type="date" class="form-control form-control-sm form-control-alternative" name="e" value="<?= $this->input->get('e', TRUE) ?>">
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 text-left">
+                                        <div class="col-lg-4 text-left">
                                             <div class="form-group">
                                                 <label style="color: white">-</label><br>
-                                                <button type="submit" class="btn tampil btn-sm btn-primary">Tampil</button> 
-                                                <a href="<?php echo site_url('laporan') ?>" class="btn btn-sm btn-default">Reset</a>
+                                                <button type="submit" class="btn tampil btn-sm btn-round btn-primary">Tampil</button> 
+                                                <a href="<?php echo site_url('laporan') ?>" class="btn btn-sm btn-round btn-default">Reset</a>
+                                                <a href="<?php echo site_url('laporan/receiving_report/') ?><?= $this->input->get('s')?>/<?= $this->input->get('e')?>" class="btn btn-sm btn-round btn-warning fa fa-print">Print</a>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6"></div>
+                                        <div class="col-lg-4"></div>
                                     </div>
                                 </form>
                             </div><!-- /.box-body -->
