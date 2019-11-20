@@ -194,7 +194,7 @@ class Tb_stok extends CI_Controller
         $this->load->view('tb_stok_doc',$data);
     }
 
-    public function pdf()
+    public function pdf1()
     {
 
         $data = array(
