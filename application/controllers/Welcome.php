@@ -20,6 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$mpdf = new \Mpdf\Mpdf(['format' => 'A4-L','orientation' => 'L']);
+		$html = $this->load->view('welcome_message',[],true);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
+		// $this->load->view('welcome_message');
 	}
 }

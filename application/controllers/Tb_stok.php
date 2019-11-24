@@ -198,11 +198,25 @@ class Tb_stok extends CI_Controller
     {
 
         $data = array(
-            'tb_stok_data' => $this->Tb_stok_model->get_all(),
+            'tb_stok_data' => $this->Tb_stok_model->get_print_stok(),
             'start' => 0
         );
+        $mpdf = new \Mpdf\Mpdf(['format' => 'A4-P','orientation' => 'L']);
+		$html = $this->load->view('stok/tb_stok_pdf',$data,true);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
         
-        $this->load->view('stok/tb_stok_pdf',$data);
+        // $this->load->view('stok/tb_stok_pdf',$data);
+    }
+
+    public function tes(){
+                $this->db->join('tb_stok st','tb_barang.id_barang = st.id_barang');
+                $this->db->join('tb_satuan s','tb_barang.satuan = s.id_satuan');
+                $this->db->join('tb_kategori k','tb_barang.kategori = k.id_kategori');
+                $this->db->join('tb_brand b','tb_barang.brand = b.id_brand');
+        $data = $this->db->get('tb_barang');
+
+        print_r($data->result());
     }
 
 }

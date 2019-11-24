@@ -22,6 +22,15 @@ class Tb_stok_model extends CI_Model
         return $this->db->get($this->table)->result();
     }
 
+    function get_print_stok(){
+                $this->db->join('tb_stok st','tb_barang.id_barang = st.id_barang');
+                $this->db->join('tb_satuan s','tb_barang.satuan = s.id_satuan');
+                $this->db->join('tb_kategori k','tb_barang.kategori = k.id_kategori');
+                $this->db->join('tb_brand b','tb_barang.brand = b.id_brand');
+        $data = $this->db->get('tb_barang');
+        return $data;
+    }
+
     // get data by id
     function get_by_id($id)
     {
