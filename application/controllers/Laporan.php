@@ -5,7 +5,7 @@ class Laporan extends CI_Controller{
             parent::__construct();
             $this->load->helper('url');
             $this->load->helper('form');
-            $this->load->model('My_model');
+            $this->load->model('My_model','model_my');
             $this->load->library('session');
             if($this->session->userdata('true') != 'oke'){
                 redirect(base_url());
@@ -32,10 +32,14 @@ class Laporan extends CI_Controller{
         $start 	= intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
                
-        $this->db->join('tb_receiving_item r','tb_barang.id_barang = r.id_barang');
-        $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
-        $this->db->where('tgl >=', $s);
-		$this->db->where('tgl <=', $e);
+                $this->db->join('tb_stok st','tb_barang.id_barang = st.id_barang');
+                $this->db->join('tb_satuan s','tb_barang.satuan = s.id_satuan');
+                $this->db->join('tb_kategori k','tb_barang.kategori = k.id_kategori');
+                $this->db->join('tb_brand br','tb_barang.brand = br.id_brand');
+                $this->db->join('tb_receiving_item r','tb_barang.id_barang = r.id_barang');
+                $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+                $this->db->where('tgl >=', $s);
+                $this->db->where('tgl <=', $e);
         $get =	$this->db->get('tb_barang');
 
         $data = array();
@@ -65,14 +69,11 @@ class Laporan extends CI_Controller{
     } 
 
      function receiving_report($s,$e){
-        $this->db->select('*');
-        $this->db->from('tb_barang b');
-        $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
-        $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
-        $this->db->where('tgl >=', $s);
-		$this->db->where('tgl <=', $e);
-        $data = $this->db->get()->result();
-        // echo "<pre>"; print_r($data); echo "</pre>";
-        // $this->output->enable_profiler(true);
+        $data = $this->model_my->laporan_rev($s,$e); 
+
+        $mpdf = new \Mpdf\Mpdf(['format' => 'A4-P','orientation' => 'P']);
+		$html = $this->load->view('laporan/laporan_rev_pdf',$data,true);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
     }
 }

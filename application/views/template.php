@@ -8,7 +8,7 @@
 
 	<meta name="description" content="Static &amp; Dynamic Tables" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
+	<link rel="icon" href="<?= base_url()?>/assets/images/foto/cv.png" type="image/ico/png" />
 	<!-- bootstrap & fontawesome -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -61,7 +61,7 @@
 				<a href="<?= base_url('admin'); ?>" class="navbar-brand">
 					<small>
 						<i class="ace-icon fa fa-university white"></i>
-						Inventory
+						Inventory System
 					</small>
 				</a>
 			</div>
@@ -180,12 +180,12 @@
 			</script>
 
 			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large" style="background-color: #7FFF00;">
-					<!-- <img  src="<?= base_url()?>assets/images/foto/petik.png?>" width="150" height="150"> -->
+				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large" >
+					<img  src="<?= base_url()?>/assets/images/foto/cv.png" width="180" height="60">
 				</div>
 
-				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini" style="background-color: #7FFF00;">
-					<!-- <img src="<?= base_url()?>assets/images/foto/.png?>" width="42" height="37"> -->
+				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini" >
+					<img src="<?= base_url()?>/assets/images/foto/cv.png" width="40" height="25">
 					
 				</div>
 			</div><!-- /.sidebar-shortcuts -->
@@ -465,7 +465,7 @@
 					  	  
 					],
 					ajax:'<?php echo base_url('') ?>laporan/ajax/<?= $this->input->get('s', TRUE) ."/". $this->input->get('e', TRUE) ?>',
-					scrollY:400,
+					scrollY:250,
 					info :false,
 					deferRender:true,
 					scroller:true,
@@ -485,7 +485,7 @@
 					  	  
 					],
 					ajax:'<?php echo base_url('') ?>laporan_issuing/ajax/<?= $this->input->get('s', TRUE) ."/". $this->input->get('e', TRUE) ?>',
-					scrollY:400,
+					scrollY:250,
 					info :false,
 					deferRender:true,
 					scroller:true,

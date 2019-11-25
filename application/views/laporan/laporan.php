@@ -4,7 +4,7 @@
 					<i class="ace-icon fa fa-home home-icon"></i>
 					<a href="<?= base_url('admin'); ?>">Dashboard</a> 
 				</li>
-				<li class="active">Laporan</li>
+				<li class="active">Laporan Barang Masuk By Date</li>
 				</ul>
 		</div> 
 <!-- Main content -->
@@ -13,7 +13,7 @@
                 <div class='col-xs-12'>
                     <div class='box'>
                         <div class='box-header'>   
-                            <h3 class='box-title'>Laporan</h3>
+                            <h3 class='box-title'>Laporan Receiving</h3>
                             <div class='box box-primary'>
                                 <form action="" method="get">
                                     <div class="row">
@@ -34,7 +34,9 @@
                                                 <label style="color: white">-</label><br>
                                                 <button type="submit" class="btn tampil btn-sm btn-round btn-primary">Tampil</button> 
                                                 <a href="<?php echo site_url('laporan') ?>" class="btn btn-sm btn-round btn-default">Reset</a>
-                                                <a href="<?php echo site_url('laporan/receiving_report/') ?><?= $this->input->get('s')?>/<?= $this->input->get('e')?>" class="btn btn-sm btn-round btn-warning fa fa-print">Print</a>
+                                                <?php if($this->input->get('s') == true):?>
+                                                <a href="<?php echo site_url('laporan/receiving_report/') ?><?= $this->input->get('s')?>/<?= $this->input->get('e')?>" class="btn btn-sm btn-round btn-warning fa fa-print" target="_blank">Print</a>
+                                                <?php endif;?>
                                             </div>
                                         </div>
                                         <div class="col-lg-4"></div>

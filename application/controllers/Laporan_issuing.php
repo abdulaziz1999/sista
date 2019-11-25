@@ -5,7 +5,7 @@ class Laporan_issuing extends CI_Controller{
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
-        $this->load->model('My_model');
+        $this->load->model('My_model','model_my');
         $this->load->library('session');
         if($this->session->userdata('true') != 'oke'){
             redirect(base_url());
@@ -62,6 +62,15 @@ class Laporan_issuing extends CI_Controller{
 		
 		echo json_encode($output);
         exit();
+    }
+
+    function issuing_report($s,$e){
+        $data = $this->model_my->laporan_iss($s,$e); 
+
+        $mpdf = new \Mpdf\Mpdf(['format' => 'A4-P','orientation' => 'P']);
+		$html = $this->load->view('laporan/laporan_iss_pdf',$data,true);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
     }
 
 }

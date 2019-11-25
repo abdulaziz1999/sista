@@ -20,6 +20,34 @@ Class My_model extends CI_Model{
         
     }
 
+    function laporan_rev($s,$e){
+                $this->db->select('*');
+                $this->db->from('tb_barang b');
+                $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
+                $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+                $this->db->join('tb_stok st','b.id_barang = st.id_barang');
+                $this->db->join('tb_satuan s','b.satuan = s.id_satuan');
+                $this->db->join('tb_kategori k','b.kategori = k.id_kategori');
+                $this->db->join('tb_brand br','b.brand = br.id_brand');
+                $this->db->where('tgl >=', $s);
+                $this->db->where('tgl <=', $e);
+        $data = $this->db->get()->result();
+        return $data; 
+    }
 
+    function laporan_iss($s,$e){
+                $this->db->select('*');
+                $this->db->from('tb_barang b');
+                $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
+                $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+                $this->db->join('tb_stok st','b.id_barang = st.id_barang');
+                $this->db->join('tb_satuan s','b.satuan = s.id_satuan');
+                $this->db->join('tb_kategori k','b.kategori = k.id_kategori');
+                $this->db->join('tb_brand br','b.brand = br.id_brand');
+                $this->db->where('tgl >=', $s);
+                $this->db->where('tgl <=', $e);
+        $data = $this->db->get()->result();
+        return $data; 
+        }
 
 }
