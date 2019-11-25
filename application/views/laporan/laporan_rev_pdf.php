@@ -50,15 +50,22 @@
 				<td width="80"><b id="j">DATE</b></td>	
 				<td width="160"><b id="j">SUPPLIER</b></td>	
 				<td width="140"><b id="j">PART NUMBER</b></td>	
-				<td width="180"><b id="j">DESKRIPSI</b></td>	
+				<td width="180"><b id="j">NAMA BARANG</b></td>	
 				<td width="70"><b id="j">JUMLAH</b></td>	
 				<td width="100"><b id="j">REMARKS</b></td>
             </tr>
-
+			<?php $no=1; foreach($rev as $row):?>
                 <tr>
-               	
+					<td><?= $no++ ?></td>
+					<td><?= $row->no_ref?></td>
+					<td><?= $row->tgl?></td>
+					<td><?= $row->supplier?></td>
+					<td><?= $row->part_number?></td>
+					<td><?= $row->nama_barang?></td>
+					<td><?= $row->jumlah?></td>
+					<td><?= $row->remarks?></td>
                 </tr>
-             
+             <?php endforeach;?>
         </table>
 <br>
 <br>

@@ -69,7 +69,7 @@ class Laporan extends CI_Controller{
     } 
 
      function receiving_report($s,$e){
-        $data = $this->model_my->laporan_rev($s,$e); 
+        $data['rev'] = $this->model_my->laporan_rev($s,$e); 
 
         $mpdf = new \Mpdf\Mpdf(['format' => 'A4-P','orientation' => 'P']);
 		$html = $this->load->view('laporan/laporan_rev_pdf',$data,true);

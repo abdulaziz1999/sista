@@ -54,11 +54,18 @@
 				<td width="70"><b id="j">JUMLAH</b></td>	
 				<td width="100"><b id="j">REMARKS</b></td>	
             </tr>
-
+			<?php $no=1; foreach($iss as $row):?>
                 <tr>
-               	
+					<td><?= $no++ ?></td>
+					<td><?= $row->no_ref?></td>
+					<td><?= $row->tgl?></td>
+					<td><?= $row->picker?></td>
+					<td><?= $row->part_number?></td>
+					<td><?= $row->nama_barang?></td>
+					<td><?= $row->jumlah?></td>
+					<td><?= $row->remarks?></td>
                 </tr>
-             
+             <?php endforeach;?>
         </table>
 <br>
 <br>

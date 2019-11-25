@@ -65,7 +65,7 @@ class Laporan_issuing extends CI_Controller{
     }
 
     function issuing_report($s,$e){
-        $data = $this->model_my->laporan_iss($s,$e); 
+        $data['iss'] = $this->model_my->laporan_iss($s,$e); 
 
         $mpdf = new \Mpdf\Mpdf(['format' => 'A4-P','orientation' => 'P']);
 		$html = $this->load->view('laporan/laporan_iss_pdf',$data,true);
