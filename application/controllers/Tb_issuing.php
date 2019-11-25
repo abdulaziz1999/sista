@@ -221,20 +221,20 @@ class Tb_issuing extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "Tgl");
-	xlsWriteLabel($tablehead, $kolomhead++, "No Ref");
-	xlsWriteLabel($tablehead, $kolomhead++, "Picker");
-	xlsWriteLabel($tablehead, $kolomhead++, "Remarks");
+        xlsWriteLabel($tablehead, $kolomhead++, "Tgl");
+        xlsWriteLabel($tablehead, $kolomhead++, "No Ref");
+        xlsWriteLabel($tablehead, $kolomhead++, "Picker");
+        xlsWriteLabel($tablehead, $kolomhead++, "Remarks");
 
 	foreach ($this->Tb_issuing_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->tgl);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->no_ref);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->picker);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->remarks);
+            xlsWriteLabel($tablebody, $kolombody++, $data->tgl);
+            xlsWriteLabel($tablebody, $kolombody++, $data->no_ref);
+            xlsWriteLabel($tablebody, $kolombody++, $data->picker);
+            xlsWriteLabel($tablebody, $kolombody++, $data->remarks);
 
 	    $tablebody++;
             $nourut++;
@@ -255,6 +255,17 @@ class Tb_issuing extends CI_Controller
         );
         
         $this->load->view('tb_issuing_doc',$data);
+    }
+
+    public function report_iss_picker($uri)
+    {
+
+        $data['sup'] = $this->Tb_issuing_model->get_picker($uri);
+
+        $mpdf = new \Mpdf\Mpdf(['format' => 'A4-P','orientation' => 'P']);
+		$html = $this->load->view('issuing/tb_issuing_pdf',$data,true);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
     }
 
 }

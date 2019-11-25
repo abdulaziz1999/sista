@@ -72,6 +72,20 @@ class Tb_receiving_model extends CI_Model
         $this->db->delete($this->table);
     }
 
+    function get_sup($uri){
+                $this->db->select('*');
+                $this->db->from('tb_barang b');
+                $this->db->join('tb_receiving_item r','b.id_barang = r.id_barang');
+                $this->db->join('tb_receiving r2','r.id_receiving = r2.id_receiving');
+                $this->db->join('tb_stok st','b.id_barang = st.id_barang');
+                $this->db->join('tb_satuan s','b.satuan = s.id_satuan');
+                $this->db->join('tb_kategori k','b.kategori = k.id_kategori');
+                $this->db->join('tb_brand br','b.brand = br.id_brand');
+                $this->db->where(['r2.id_receiving' => $uri]);
+        $data = $this->db->get();
+        return $data;
+    }
+
 }
 
 /* End of file Tb_receiving_model.php */

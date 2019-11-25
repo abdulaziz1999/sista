@@ -28,6 +28,7 @@
     </form>
     <hr>
     <button type="button" class="btn btn-sm btn-round btn-primary" data-toggle="modal" data-target="#myModal" class="btn btn-primary round btn-sm">tambah</button>
+    <a href="<?php echo site_url('tb_issuing/report_iss_picker/') ?><?= $this->uri->segment(3)?>" class="btn btn-sm btn-round btn-warning fa fa-print" target="_blank">Print</a>     
                   <br><br>
                   <table class="table table-bordered table-striped" id="mytable">
                           <thead>

@@ -259,15 +259,15 @@ class Tb_receiving extends CI_Controller
         $this->load->view('receiving/tb_receiving_doc',$data);
     }
 
-    public function pdf()
+    public function report_rev_supplier($uri)
     {
 
-        $data = array(
-            'tb_receiving_data' => $this->Tb_receiving_model->get_all(),
-            'start' => 0
-        );
-        
-        $this->load->view('receiving/tb_receiving_pdf',$data);
+        $data['sup'] = $this->Tb_receiving_model->get_sup($uri);
+
+        $mpdf = new \Mpdf\Mpdf(['format' => 'A4-P','orientation' => 'P']);
+		$html = $this->load->view('receiving/tb_receiving_pdf',$data,true);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
     }
 
     public function pdf_rev()

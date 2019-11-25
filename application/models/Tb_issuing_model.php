@@ -72,6 +72,20 @@ class Tb_issuing_model extends CI_Model
         $this->db->delete($this->table);
     }
 
+    function get_picker($uri){
+        $this->db->select('*');
+        $this->db->from('tb_barang b');
+        $this->db->join('tb_issuing_item s1','b.id_barang = s1.id_barang');
+        $this->db->join('tb_issuing s2','s1.id_issuing = s2.id_issuing');
+        $this->db->join('tb_stok st','b.id_barang = st.id_barang');
+        $this->db->join('tb_satuan s','b.satuan = s.id_satuan');
+        $this->db->join('tb_kategori k','b.kategori = k.id_kategori');
+        $this->db->join('tb_brand br','b.brand = br.id_brand');
+        $this->db->where(['s2.id_issuing' => $uri]);
+        $data = $this->db->get();
+        return $data;
+}
+
 }
 
 /* End of file Tb_issuing_model.php */
