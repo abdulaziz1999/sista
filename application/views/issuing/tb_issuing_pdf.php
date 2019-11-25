@@ -52,7 +52,7 @@
 			</tr>
 			<tr>
 				<td width="300">No. Ref  &nbsp;: <?= $sup->row()->no_ref?> <br />
-								Time &nbsp; &nbsp; &nbsp;: <?= $sup->row()->tgl?>
+								Time &nbsp; &nbsp; &nbsp;: <?= date('d F Y',strtotime($sup->row()->tgl))?>
 				</td>
 				<td width="300">Supplier &nbsp;: <?= $sup->row()->picker?> <br />
 								Remarks&nbsp;: <?= $sup->row()->remarks?>
