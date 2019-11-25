@@ -8,7 +8,7 @@
 
 	<meta name="description" content="Static &amp; Dynamic Tables" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-	<link rel="icon" href="<?= base_url()?>/assets/images/foto/cv.png" type="image/ico/png" />
+	<link rel="icon" href="<?= base_url()?>/assets/images/foto/berkah.png" type="image/ico/png" />
 	<!-- bootstrap & fontawesome -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -185,7 +185,7 @@
 				</div>
 
 				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini" >
-					<img src="<?= base_url()?>/assets/images/foto/cv.png" width="40" height="25">
+					<img src="<?= base_url()?>/assets/images/foto/berkah.png" width="40" height="60">
 					
 				</div>
 			</div><!-- /.sidebar-shortcuts -->
@@ -232,7 +232,7 @@
 				</li>
 							<li class="<?php if($this->uri->segment(1) == 'tb_barang'){ echo "active"; }else{ echo "";}?>">
 								<a href="<?= base_url('tb_barang'); ?>">
-									<i class="menu-icon fa fa-users"></i>
+									<i class="menu-icon fa fa-briefcase"></i>
 									<span class="menu-text">
 										Master Barang
 										<span class="badge badge-success"><?php echo $this->db->get('tb_barang')->num_rows();?></span>

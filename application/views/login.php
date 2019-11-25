@@ -11,6 +11,7 @@
 	<!-- bootstrap & fontawesome -->
 	<link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="<?= base_url(); ?>assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="icon" href="<?= base_url()?>/assets/images/foto/berkah.png" type="image/ico/png" />
 
 	<!-- text fonts -->
 	<link rel="stylesheet" href="<?= base_url(); ?>assets/css/fonts.googleapis.com.css" />

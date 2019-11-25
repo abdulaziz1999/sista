@@ -27,22 +27,22 @@
 										<div class="col-sm-md-12" style="margin-bottom: 50px;">
 												<div class="container" style="margin-left: 0px;">
 														<div class="col-sm-4 bg-primary text-center">
-															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
-															<h1><strong>99</strong></h1>
+															<h1><span class="ace-icon fa fa fa-truck"></span></h1>
+															<h1><strong><?php $date = date('Y-m-d'); echo $this->db->get_where('tb_issuing',['tgl' => $date])->num_rows();?></strong></h1>
 															<br>
 															<h4><strong>BARANG KELUAR HARI INI</strong></h4>
 															<br>
 														</div>
 														<div class="col-sm-4 bg-primary text-center">
-															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
-															<h1><strong>99</strong></h1>
+															<h1><span class="ace-icon fa fa-briefcase"></span></h1>
+															<h1><strong><?= $this->db->get('tb_barang')->num_rows();?></strong></h1>
 															<br>
-															<h4><strong>JUMLAH BARANG</strong></h4>
+															<h4><strong>MASTER BARANG</strong></h4>
 															<br>
 														</div>
 														<div class="col-sm-4 bg-primary text-center">
-															<h1><span class="ace-icon fa fa-graduation-cap"></span></h1>
-															<h1><strong>99</strong></h1>
+															<h1><span class="ace-icon fa fa fa-shopping-cart"></span></h1>
+															<h1><strong><?php $date = date('Y-m-d'); echo $this->db->get_where('tb_receiving',['tgl' => $date])->num_rows();?></strong></h1>
 															<br>
 															<h4><strong>BARANG MASUK HARI INI</strong></h4>
 															<br>
