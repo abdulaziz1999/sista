@@ -183,6 +183,7 @@ class Tb_receiving extends CI_Controller
 
         if ($row) {
             $this->Tb_receiving_model->delete($id);
+            $this->db->delete('tb_receiving_item',['id_receiving' => $id]);
             $this->session->set_flashdata('message', 'Delete Record Success');
             redirect(site_url('tb_receiving'));
         } else {

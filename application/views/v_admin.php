@@ -55,12 +55,37 @@
 		</div>
 	</div>
 		<div class="space-6"></div>
+		<!-- <div class="row">
+			<div class="col-sm-12 infobox-container">
+				<div class="infobox infobox-green infobox-small infobox-dark">
+					<div class="infobox-icon"><i class="ace-icon fa fa-shopping-cart"></i></div>
+					<div class="infobox-data">
+						<div class="infobox-content">Receiving</div>
+						<div class="infobox-content"></div>
+					</div>
+				</div>
+				<div class="infobox infobox-purple infobox-small infobox-dark">
+					<div class="infobox-icon"><i class="ace-icon fa fa-tasks"></i></div>
+					<div class="infobox-data">
+						<div class="infobox-content">Stock</div>
+						<div class="infobox-content"></div>
+					</div>
+				</div>
+				<div class="infobox infobox-grey infobox-small infobox-dark">
+					<div class="infobox-icon"><i class="ace-icon fa fa-truck"></i></div>
+					<div class="infobox-data">
+						<div class="infobox-content">Issuing</div>
+						<div class="infobox-content"></div>
+					</div>
+				</div>
+			</div>
+		</div> -->
 		<div class="hr hr32 hr-line"></div>
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-6">
 				<div class="widget-box transparent">
 					<div class="widget-header widget-header-flat">
-						<h4 class="widget-title lighter"><i class="ace-icon fa fa-bar-chart-o"></i>Brand & Kategori</h4>
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-bar-chart-o"></i>Brand</h4>
 						<div class="widget-toolbar">
 							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
 						</div>
@@ -68,6 +93,21 @@
 					<div class="widget-body">
 						<div class="widget-main padding-4">
 							<div id="container1" class="col-sm-12" style="height:380px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="widget-box transparent">
+					<div class="widget-header widget-header-flat">
+						<h4 class="widget-title lighter"><i class="ace-icon fa fa-bar-chart-o"></i>Kategori</h4>
+						<div class="widget-toolbar">
+							<a href="#" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="widget-body">
+						<div class="widget-main padding-4">
+							<div id="container" class="col-sm-12" style="height:380px;"></div>
 						</div>
 					</div>
 				</div>

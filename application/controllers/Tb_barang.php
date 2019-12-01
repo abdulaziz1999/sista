@@ -157,7 +157,7 @@ class Tb_barang extends CI_Controller
                 // 'gambar' => $this->input->post('gambar',TRUE),
                 'ket' => $this->input->post('ket',TRUE),
 	    );
-
+            // print_r($data);
             $this->Tb_barang_model->update($this->input->post('id_barang', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('tb_barang'));
@@ -171,6 +171,8 @@ class Tb_barang extends CI_Controller
         if ($row) {
             $this->Tb_barang_model->delete($id);
             $this->db->delete('tb_stok',['id_barang' => $id]);
+            // $this->db->delete('tb_receiving_item',['id_barang' => $id]);
+            // $this->db->delete('tb_issuing_item',['id_barang' => $id]);
             $this->session->set_flashdata('message', 'Delete Record Success');
             redirect(site_url('tb_barang'));
         } else {
@@ -181,15 +183,10 @@ class Tb_barang extends CI_Controller
 
     public function _rules() 
     {
-	// $this->form_validation->set_rules('part_number', 'part number', 'trim|required');
 	$this->form_validation->set_rules('nama_barang', 'nama_barang', 'trim|required');
 	$this->form_validation->set_rules('kategori', 'kategori', 'trim|required');
 	$this->form_validation->set_rules('brand', 'brand', 'trim|required');
 	$this->form_validation->set_rules('satuan', 'satuan', 'trim|required');
-	// $this->form_validation->set_rules('move_tipe', 'move tipe', 'trim|required');
-	// $this->form_validation->set_rules('cur_harga', 'cur harga', 'trim|required');
-	// $this->form_validation->set_rules('harga', 'harga', 'trim|required|numeric');
-	// $this->form_validation->set_rules('gambar', 'gambar', 'trim|required');
 	$this->form_validation->set_rules('ket', 'ket', 'trim|required');
 	$this->form_validation->set_rules('id_barang', 'id_barang', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

@@ -23,15 +23,24 @@ class Admin_model extends CI_Model
     }
 
     function grap_brand(){
-                $this->db->select('count(id_brand) as jml,stok,nama_brand,nama_kategori');
+                $this->db->select('count(id_brand) as jml,stok,nama_brand');
                 $this->db->from('tb_barang');
                 $this->db->join('tb_brand b','b.id_brand = tb_barang.brand');
-                $this->db->join('tb_kategori k','k.id_kategori = tb_barang.kategori');
                 $this->db->join('tb_stok s','s.id_barang = tb_barang.id_barang');
                 $this->db->group_by('brand');   
         $data = $this->db->get()->result();
         return $data;
     }
+
+    function grap_kategori(){
+                $this->db->select('count(id_kategori) as jml,stok,nama_kategori');
+                $this->db->from('tb_barang');
+                $this->db->join('tb_kategori k','k.id_kategori = tb_barang.kategori');
+                $this->db->join('tb_stok s','s.id_barang = tb_barang.id_barang');
+                $this->db->group_by('kategori');   
+        $data = $this->db->get()->result();
+        return $data;
+        }
 
     
 

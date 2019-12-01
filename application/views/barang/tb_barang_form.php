@@ -9,7 +9,7 @@
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
 	    <tr><td>Part Number <?php echo form_error('part_number') ?></td>
-            <td><input type="text" class="form-control" name="part_number" id="part_number" placeholder="Part Number" value="<?php if($this->uri->segment(2) == 'create'){ echo $kode; }else{ echo $part_number;} ?>" disabled />
+            <td><input type="text" id="dis" class="form-control" name="part_number" id="part_number" placeholder="Part Number" value="<?php if($this->uri->segment(2) == 'create'){ echo $kode; }elseif($this->uri->segment(2) == 'update'){ echo $part_number;} ?>" disabled />
         </td>
 	    <tr><td>Nama Barang <?php echo form_error('nama_barang') ?></td>
             <td><input type="text" class="form-control" name="nama_barang" id="nama_barang" placeholder="Nama Barang" value="<?php echo $nama_barang; ?>" />
@@ -41,14 +41,11 @@
                 <?php endforeach;?>
             </select>
         </td>
-	    <!-- <tr><td>Gambar <?php echo form_error('gambar') ?></td>
-            <td><input type="text" class="form-control" name="gambar" id="gambar" placeholder="Gambar" value="<?php echo $gambar; ?>" />
-        </td> -->
 	    <tr><td>Ket <?php echo form_error('ket') ?></td>
             <td><input type="text" class="form-control" name="ket" id="ket" placeholder="Ket" value="<?php echo $ket; ?>" />
         </td>
 	    <input type="hidden" name="id_barang" value="<?php echo $id_barang; ?>" /> 
-	    <tr><td colspan='2'><button type="submit" class="btn btn-sm btn-round btn-primary"><?php echo $button ?></button> 
+	    <tr><td colspan='2'><button type="submit" id="btnu" onclick="myFunction()" class="btn btn-sm btn-round btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('tb_barang') ?>" class="btn btn-sm btn-round btn-default">Cancel</a></td></tr>
 	
     </table></form>

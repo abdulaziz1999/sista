@@ -181,6 +181,7 @@ class Tb_issuing extends CI_Controller
 
         if ($row) {
             $this->Tb_issuing_model->delete($id);
+            $this->db->delete('tb_issuing_item',['id_issuing' => $id]);
             $this->session->set_flashdata('message', 'Delete Record Success');
             redirect(site_url('tb_issuing'));
         } else {

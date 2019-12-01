@@ -380,7 +380,48 @@
 <script src="<?php echo base_url()?>assets/js/ace-elements.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/ace.min.js"></script>
 
+<?php if($this->uri->segment(2) == "update"):?>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("dis");
+                x.disabled = false;
+            }
+        </script>
+<?php endif;?>
 <?php if($this->uri->segment(1) == "admin"): ?>
+<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
+		<script type="text/javascript">
+				var chart1; // globally available
+					$(document).ready(function() {
+						chart1 = new Highcharts.Chart({
+							chart: {
+								renderTo: 'container',
+								type: 'column'
+							},   
+							title: {
+								text: 'Item Barang Berdasarkan Kategori'
+							},
+							xAxis: {
+								categories: ['Kategori']
+							},
+							yAxis: {
+								title: {
+									text: 'Jumlah Item'
+								}
+							},
+							series:             
+								[
+							<?php $data = $this->Admin_model->grap_kategori();
+								foreach($data as $row):?>
+								{
+									name: '<?= $row->nama_kategori?>',
+									data: [<?= $row->stok?>],
+								},
+							<?php endforeach;?>
+								]
+						});
+					});	
+			</script>
 			<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
 		<script type="text/javascript">
 				var chart1; // globally available
@@ -391,16 +432,11 @@
 								type: 'column'
 							},   
 							title: {
-								text: 'Item Barang Berdasarkan Brand & Kategori'
+								text: 'Item Barang Berdasarkan Brand'
 							},
 							xAxis: {
 								categories: 
-										[
-								<?php $data = $this->Admin_model->grap_brand();
-										foreach($data as $row):?>
-											'<?= $row->nama_kategori?>',
-								<?php endforeach;?>
-										]
+										['Brand']
 							},
 							yAxis: {
 								title: {
