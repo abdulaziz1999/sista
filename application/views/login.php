@@ -47,6 +47,7 @@
 								<i class="ace-icon fa fa-leaf green"></i>
 								<span class="red">Inventory</span>
 								<span class="black" id="id-text2">Application</span>
+								<!-- <img src="<?= base_url()?>/assets/images/foto/cv.png" width="" height="" alt=""> -->
 							</h1>
 							<h4 class="blue" id="id-company-text">&copy; PT Berkah Sejahtera </h4>
 						</div>
@@ -57,10 +58,9 @@
 							<div id="login-box" class="login-box visible widget-box no-border">
 								<div class="widget-body">
 									<div class="widget-main">
-										<h4 class="header blue lighter bigger">
-											<i class="ace-icon fa fa-university green"></i>
-											PT Berkah Sejahtera
-
+										<h4 class="header blue lighter bigger text-center">
+											<i><img src="<?= base_url()?>/assets/images/foto/berkah.png" width="50" height="70" alt=""></i>
+											 <b>PT Berkah Sejahtera</b>
 										</h4>
 
 										<div class="space-6"></div>

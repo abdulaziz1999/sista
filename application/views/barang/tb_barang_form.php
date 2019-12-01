@@ -41,9 +41,9 @@
                 <?php endforeach;?>
             </select>
         </td>
-	    <tr><td>Gambar <?php echo form_error('gambar') ?></td>
+	    <!-- <tr><td>Gambar <?php echo form_error('gambar') ?></td>
             <td><input type="text" class="form-control" name="gambar" id="gambar" placeholder="Gambar" value="<?php echo $gambar; ?>" />
-        </td>
+        </td> -->
 	    <tr><td>Ket <?php echo form_error('ket') ?></td>
             <td><input type="text" class="form-control" name="ket" id="ket" placeholder="Ket" value="<?php echo $ket; ?>" />
         </td>

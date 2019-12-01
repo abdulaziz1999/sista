@@ -38,14 +38,14 @@ class Tb_barang extends CI_Controller
         $row = $this->Tb_barang_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'id_barang' => $row->id_barang,
-		'part_number' => $row->part_number,
-		'nama_barang' => $row->nama_barang,
-		'kategori' => $row->kategori,
-		'brand' => $row->brand,
-		'satuan' => $row->satuan,
-		'gambar' => $row->gambar,
-		'ket' => $row->ket,
+                    'id_barang' => $row->id_barang,
+                    'part_number' => $row->part_number,
+                    'nama_barang' => $row->nama_barang,
+                    'kategori' => $row->kategori,
+                    'brand' => $row->brand,
+                    'satuan' => $row->satuan,
+                    // 'gambar' => $row->gambar,
+                    'ket' => $row->ket,
 	    );
             $this->template->load('template','barang/tb_barang_read', $data);
         } else {
@@ -57,19 +57,19 @@ class Tb_barang extends CI_Controller
     public function create() 
     {
         $data = array(
-        'button' => 'Create',
-        'action' => site_url('tb_barang/create_action'),
-	    'id_barang' => set_value('id_barang'),
-	    'part_number' => set_value('part_number'),
-	    'nama_barang' => set_value('nama_barang'),
-	    'kategori' => set_value('kategori'),
-	    'brand' => set_value('brand'),
-	    'satuan' => set_value('satuan'),
-	    'gambar' => set_value('gambar'),
-        'ket' => set_value('ket'),
-        'satuan' => $this->db->get('tb_satuan'),
-		'brand' => $this->db->get('tb_brand'),
-        'kategori' => $this->db->get('tb_kategori'),
+                'button' => 'Create',
+                'action' => site_url('tb_barang/create_action'),
+                'id_barang' => set_value('id_barang'),
+                'part_number' => set_value('part_number'),
+                'nama_barang' => set_value('nama_barang'),
+                'kategori' => set_value('kategori'),
+                'brand' => set_value('brand'),
+                'satuan' => set_value('satuan'),
+                // 'gambar' => set_value('gambar'),
+                'ket' => set_value('ket'),
+                'satuan' => @$this->db->get('tb_satuan'),
+                'brand' => @$this->db->get('tb_brand'),
+                'kategori' => @$this->db->get('tb_kategori'),
         
     );
     
@@ -84,13 +84,13 @@ class Tb_barang extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'part_number' => $this->input->post('part_number',TRUE),
-		'nama_barang' => $this->input->post('nama_barang',TRUE),
-		'kategori' => $this->input->post('kategori',TRUE),
-		'brand' => $this->input->post('brand',TRUE),
-		'satuan' => $this->input->post('satuan',TRUE),
-		'gambar' => $this->input->post('gambar',TRUE),
-		'ket' => $this->input->post('ket',TRUE),
+                'part_number' => $this->input->post('part_number',TRUE),
+                'nama_barang' => $this->input->post('nama_barang',TRUE),
+                'kategori' => $this->input->post('kategori',TRUE),
+                'brand' => $this->input->post('brand',TRUE),
+                'satuan' => $this->input->post('satuan',TRUE),
+                // 'gambar' => $this->input->post('gambar',TRUE),
+                'ket' => $this->input->post('ket',TRUE),
         );
 
         $this->Tb_barang_model->insert($data);
@@ -114,22 +114,22 @@ class Tb_barang extends CI_Controller
 
         if ($row) {
             $data = array(
-        'button' => 'Update',
-        'action' => site_url('tb_barang/update_action'),
-		'id_barang' => set_value('id_barang', $row->id_barang),
-		'part_number' => set_value('part_number', $row->part_number),
-		'nama_barang' => set_value('nama_barang', $row->nama_barang),
-		'kategori' => set_value('kategori', $row->kategori),
-		'brand' => set_value('brand', $row->brand),
-		'satuan' => set_value('satuan', $row->satuan),
-		'gambar' => set_value('gambar', $row->gambar),
-        'ket' => set_value('ket', $row->ket),
-        'satuan' => $this->db->get('tb_satuan'),
-		'brand' => $this->db->get('tb_brand'),
-        'kategori' => $this->db->get('tb_kategori'),
-        'idkategori' => $this->db->get_where('tb_barang',['id_barang' => $this->uri->segment(3)])->row()->kategori,
-        'idbrand' =>$this->db->get_where('tb_barang',['id_barang' => $this->uri->segment(3)])->row()->brand,
-        'idsatuan' => $this->db->get_where('tb_barang',['id_barang' => $this->uri->segment(3)])->row()->satuan
+                'button' => 'Update',
+                'action' => site_url('tb_barang/update_action'),
+                'id_barang' => set_value('id_barang', $row->id_barang),
+                'part_number' => set_value('part_number', $row->part_number),
+                'nama_barang' => set_value('nama_barang', $row->nama_barang),
+                'kategori' => set_value('kategori', $row->kategori),
+                'brand' => set_value('brand', $row->brand),
+                'satuan' => set_value('satuan', $row->satuan),
+                // 'gambar' => set_value('gambar', $row->gambar),
+                'ket' => set_value('ket', $row->ket),
+                'satuan' => @$this->db->get('tb_satuan'),
+                'brand' => @$this->db->get('tb_brand'),
+                'kategori' => @$this->db->get('tb_kategori'),
+                'idkategori' => @$this->db->get_where('tb_barang',['id_barang' => $this->uri->segment(3)])->row()->kategori,
+                'idbrand' => @$this->db->get_where('tb_barang',['id_barang' => $this->uri->segment(3)])->row()->brand,
+                'idsatuan' => @$this->db->get_where('tb_barang',['id_barang' => $this->uri->segment(3)])->row()->satuan
 	    );
             $this->template->load('template','barang/tb_barang_form', $data);
         } else {
@@ -146,13 +146,13 @@ class Tb_barang extends CI_Controller
             $this->update($this->input->post('id_barang', TRUE));
         } else {
             $data = array(
-		'part_number' => $this->input->post('part_number',TRUE),
-		'nama_barang' => $this->input->post('nama_barang',TRUE),
-		'kategori' => $this->input->post('kategori',TRUE),
-		'brand' => $this->input->post('brand',TRUE),
-		'satuan' => $this->input->post('satuan',TRUE),
-		'gambar' => $this->input->post('gambar',TRUE),
-		'ket' => $this->input->post('ket',TRUE),
+                'part_number' => $this->input->post('part_number',TRUE),
+                'nama_barang' => $this->input->post('nama_barang',TRUE),
+                'kategori' => $this->input->post('kategori',TRUE),
+                'brand' => $this->input->post('brand',TRUE),
+                'satuan' => $this->input->post('satuan',TRUE),
+                // 'gambar' => $this->input->post('gambar',TRUE),
+                'ket' => $this->input->post('ket',TRUE),
 	    );
 
             $this->Tb_barang_model->update($this->input->post('id_barang', TRUE), $data);
@@ -167,6 +167,7 @@ class Tb_barang extends CI_Controller
 
         if ($row) {
             $this->Tb_barang_model->delete($id);
+            $this->db->delete('tb_stok',['id_barang' => $id]);
             $this->session->set_flashdata('message', 'Delete Record Success');
             redirect(site_url('tb_barang'));
         } else {
@@ -185,7 +186,7 @@ class Tb_barang extends CI_Controller
 	// $this->form_validation->set_rules('move_tipe', 'move tipe', 'trim|required');
 	// $this->form_validation->set_rules('cur_harga', 'cur harga', 'trim|required');
 	// $this->form_validation->set_rules('harga', 'harga', 'trim|required|numeric');
-	$this->form_validation->set_rules('gambar', 'gambar', 'trim|required');
+	// $this->form_validation->set_rules('gambar', 'gambar', 'trim|required');
 	$this->form_validation->set_rules('ket', 'ket', 'trim|required');
 	$this->form_validation->set_rules('id_barang', 'id_barang', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Report Stok</title>
+        <link rel="icon" href="<?= base_url()?>/assets/images/foto/berkah.png" type="image/ico/png" />
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
+        
         <style>
             .word-table {
                 border:1px solid black !important; 

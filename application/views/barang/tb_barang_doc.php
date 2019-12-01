@@ -39,7 +39,6 @@
 		      <td><?php echo $tb_barang->kategori ?></td>
 		      <td><?php echo $tb_barang->brand ?></td>
 		      <td><?php echo $tb_barang->satuan ?></td>
-		      <td><?php echo $tb_barang->gambar ?></td>
 		      <td><?php echo $tb_barang->ket ?></td>	
                 </tr>
                 <?php

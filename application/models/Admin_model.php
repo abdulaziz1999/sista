@@ -6,97 +6,33 @@ if (!defined('BASEPATH'))
 class Admin_model extends CI_Model
 {
 
-    public $table = 'admin';
-    public $id = 'id_admin';
-    public $order = 'DESC';
-
-    function __construct()
-    {
-        parent::__construct();
+    function barang_max(){
+                    $this->db->join('tb_stok s','s.id_barang = tb_barang.id_barang');
+                    $this->db->order_by('stok','desc');
+                    $this->db->limit(5);
+            $query= $this->db->get('tb_barang');
+            return $query;
     }
 
-    // get all
-    function get_all()
-    {
-        $this->db->order_by($this->id, $this->order);
-        return $this->db->get($this->table)->result();
+    function barang_min(){
+                $this->db->join('tb_stok s','s.id_barang = tb_barang.id_barang');
+                $this->db->order_by('stok','asc');
+                $this->db->limit(5);
+            $query= $this->db->get('tb_barang');
+            return $query;
     }
 
-    function get_count()
-    {
-        $this->db->select('count(*) as jml');
-        return $this->db->get($this->table)->row();
+    function grap_brand(){
+                $this->db->select('count(id_brand) as jml,stok,nama_brand,nama_kategori');
+                $this->db->from('tb_barang');
+                $this->db->join('tb_brand b','b.id_brand = tb_barang.brand');
+                $this->db->join('tb_kategori k','k.id_kategori = tb_barang.kategori');
+                $this->db->join('tb_stok s','s.id_barang = tb_barang.id_barang');
+                $this->db->group_by('brand');   
+        $data = $this->db->get()->result();
+        return $data;
     }
 
-    function get_dosen()
-    {
-        $this->db->where('level','dosen');
-        return $this->db->get('admin')->result();
-    }
-
-    function get_jmlpengisi($id_matkul,$id_dosen){
-        $this->db->select('count(*) as jmlpengisi');
-        $this->db->join('tb_jawaban','tb_jawaban.id_pertanyaan = tb_pertanyaan.id_pertanyaan','left');
-        $this->db->join('pengajar','pengajar.id = tb_jawaban.id_pengajar','left');
-        $this->db->where('pengajar.id_dosen = '.$id_dosen.' and tb_jawaban.id_matkul = '.$id_matkul);
-        $this->db->group_by('tb_jawaban.id_mahasantri');
-        return $this->db->get('tb_pertanyaan')->num_rows();
-    }
-
-    // get data by id
-    function get_by_id($id)
-    {
-        $this->db->where($this->id, $id);
-        return $this->db->get($this->table)->row();
-    }
-    
-    // get total rows
-    function total_rows($q = NULL) {
-        $this->db->like('id_admin', $q);
-        $this->db->or_like('nama', $q);
-        $this->db->or_like('username', $q);
-        $this->db->or_like('password', $q);
-        $this->db->or_like('email', $q);
-        $this->db->or_like('level', $q);
-        $this->db->or_like('foto', $q);
-        $this->db->from($this->table);
-        return $this->db->count_all_results();
-    }
-
-    // get data with limit and search
-    function get_limit_data($limit, $start = 0, $q = NULL) {
-        $this->db->order_by($this->id, $this->order);
-        $this->db->like('id_admin', $q);
-        $this->db->or_like('nama', $q);
-        $this->db->or_like('username', $q);
-        $this->db->or_like('password', $q);
-        $this->db->or_like('email', $q);
-        $this->db->or_like('level', $q);
-        $this->db->or_like('foto', $q);
-        $this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
-    }
-
-    // insert data
-    function insert($data)
-    {
-
-        $this->db->insert($this->table, $data);
-    }
-
-    // update data
-    function update($id, $data)
-    {
-        $this->db->where($this->id, $id);
-        $this->db->update($this->table, $data);
-    }
-
-    // delete data
-    function delete($id)
-    {
-        $this->db->where($this->id, $id);
-        $this->db->delete($this->table);
-    }
 
 }
 

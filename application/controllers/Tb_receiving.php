@@ -44,7 +44,7 @@ class Tb_receiving extends CI_Controller
 		'supplier' => $row->supplier,
 		'remarks' => $row->remarks,
 	    );
-            $this->template->load('template','tb_receiving_read', $data);
+            $this->template->load('template','receiving/tb_receiving_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('tb_receiving'));

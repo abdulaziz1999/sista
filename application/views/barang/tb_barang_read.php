@@ -12,7 +12,6 @@
 	    <tr><td>Kategori</td><td><?php echo $kategori; ?></td></tr>
 	    <tr><td>Brand</td><td><?php echo $brand; ?></td></tr>
 	    <tr><td>Satuan</td><td><?php echo $satuan; ?></td></tr>
-	    <tr><td>Gambar</td><td><?php echo $gambar; ?></td></tr>
 	    <tr><td>Ket</td><td><?php echo $ket; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('tb_barang') ?>" class="btn btn-sm btn-round btn-default">Cancel</a></td></tr>
 	</table>

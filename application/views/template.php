@@ -4,8 +4,8 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Inventori PT Berkah</title>
-
+	<title>Inventory PT Berkah</title>
+ 
 	<meta name="description" content="Static &amp; Dynamic Tables" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<link rel="icon" href="<?= base_url()?>/assets/images/foto/berkah.png" type="image/ico/png" />
@@ -381,37 +381,6 @@
 <script src="<?php echo base_url()?>assets/js/ace.min.js"></script>
 
 <?php if($this->uri->segment(1) == "admin"): ?>
-<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
-		<script type="text/javascript">
-				var chart1; // globally available
-					$(document).ready(function() {
-						chart1 = new Highcharts.Chart({
-							chart: {
-								renderTo: 'container',
-								type: 'column'
-							},   
-							title: {
-								text: 'Item Barang Berdasarkan Kategori'
-							},
-							xAxis: {
-								categories: ['Kategori']
-							},
-							yAxis: {
-								title: {
-									text: 'Jumlah Item'
-								}
-							},
-							series:             
-								[
-								{
-									name: 'Susu',
-									data: [90]
-								},
-								
-								]
-						});
-					});	
-			</script>
 			<script src="<?= base_url()?>assets/js/highcharts.js" type="text/javascript"></script>
 		<script type="text/javascript">
 				var chart1; // globally available
@@ -422,10 +391,16 @@
 								type: 'column'
 							},   
 							title: {
-								text: 'Item Barang Berdasarkan Brand'
+								text: 'Item Barang Berdasarkan Brand & Kategori'
 							},
 							xAxis: {
-								categories: ['Brand','Agar','Kecap','coba']
+								categories: 
+										[
+								<?php $data = $this->Admin_model->grap_brand();
+										foreach($data as $row):?>
+											'<?= $row->nama_kategori?>',
+								<?php endforeach;?>
+										]
 							},
 							yAxis: {
 								title: {
@@ -434,22 +409,13 @@
 							},
 							series:             
 								[
+							<?php $data = $this->Admin_model->grap_brand();
+								foreach($data as $row):?>
 								{
-									name: 'Susu',
-									data: [70],
+									name: '<?= $row->nama_brand?>',
+									data: [<?= $row->stok?>],
 								},
-								{
-									name: 'Agar',
-									data: [90],
-								},
-								{
-									name: 'Kecap',
-									data: [40],
-								},
-								{
-									name: 'Coba',
-									data: [90],
-								},
+							<?php endforeach;?>
 								]
 						});
 					});	
@@ -472,7 +438,7 @@
 					searching:true,
 				});
 			});
-			</script>
+			</script> 
 			<?php endif; ?>
 		<?php endif; ?>
 		<?php if($this->uri->segment(1) == "laporan_issuing"): ?>

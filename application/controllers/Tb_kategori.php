@@ -83,10 +83,10 @@ class Tb_kategori extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('tb_kategori/update_action'),
-		'id_kategori' => set_value('id_kategori', $row->id_kategori),
-		'nama_kategori' => set_value('nama_kategori', $row->nama_kategori),
+                'id_kategori' => set_value('id_kategori', $row->id_kategori),
+                'nama_kategori' => set_value('nama_kategori', $row->nama_kategori),
 	    );
-            $this->template->load('template','tb_kategori_form', $data);
+            $this->template->load('template','kategori/tb_kategori_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('tb_kategori'));
@@ -101,7 +101,7 @@ class Tb_kategori extends CI_Controller
             $this->update($this->input->post('id_kategori', TRUE));
         } else {
             $data = array(
-		'nama_kategori' => $this->input->post('nama_kategori',TRUE),
+		        'nama_kategori' => $this->input->post('nama_kategori',TRUE),
 	    );
 
             $this->Tb_kategori_model->update($this->input->post('id_kategori', TRUE), $data);
