@@ -46,7 +46,7 @@
                   echo '  '; 
                   echo anchor(site_url('tb_satuan/update/'.$tb_satuan->id_satuan),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-success btn-sm btn-round')); 
                   echo '  '; 
-                  echo anchor(site_url('tb_satuan/delete/'.$tb_satuan->id_satuan),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm btn-round" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+                  //echo anchor(site_url('tb_satuan/delete/'.$tb_satuan->id_satuan),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm btn-round" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
                   ?>
                     </td>
 	              </tr>

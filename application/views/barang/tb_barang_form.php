@@ -9,7 +9,7 @@
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
 	    <tr><td>Part Number <?php echo form_error('part_number') ?></td>
-            <td><input type="text" class="form-control" name="part_number" id="part_number" placeholder="Part Number" value="<?php echo $part_number; ?>" />
+            <td><input type="text" class="form-control" name="part_number" id="part_number" placeholder="Part Number" value="<?php if($this->uri->segment(2) == 'create'){ echo $kode; }else{ echo $part_number;} ?>" disabled />
         </td>
 	    <tr><td>Nama Barang <?php echo form_error('nama_barang') ?></td>
             <td><input type="text" class="form-control" name="nama_barang" id="nama_barang" placeholder="Nama Barang" value="<?php echo $nama_barang; ?>" />

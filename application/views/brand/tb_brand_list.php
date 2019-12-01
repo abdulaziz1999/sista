@@ -43,7 +43,7 @@
 			echo '  '; 
 			echo anchor(site_url('tb_brand/update/'.$tb_brand->id_brand),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-sm btn-round btn-success btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('tb_brand/delete/'.$tb_brand->id_brand),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-sm btn-round btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			//echo anchor(site_url('tb_brand/delete/'.$tb_brand->id_brand),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-sm btn-round btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 			?>
 		    </td>
 	        </tr>

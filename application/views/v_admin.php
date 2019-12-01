@@ -55,31 +55,6 @@
 		</div>
 	</div>
 		<div class="space-6"></div>
-		<!-- <div class="row">
-			<div class="col-sm-12 infobox-container">
-				<div class="infobox infobox-green infobox-small infobox-dark">
-					<div class="infobox-icon"><i class="ace-icon fa fa-shopping-cart"></i></div>
-					<div class="infobox-data">
-						<div class="infobox-content">Receiving</div>
-						<div class="infobox-content"></div>
-					</div>
-				</div>
-				<div class="infobox infobox-purple infobox-small infobox-dark">
-					<div class="infobox-icon"><i class="ace-icon fa fa-tasks"></i></div>
-					<div class="infobox-data">
-						<div class="infobox-content">Stock</div>
-						<div class="infobox-content"></div>
-					</div>
-				</div>
-				<div class="infobox infobox-grey infobox-small infobox-dark">
-					<div class="infobox-icon"><i class="ace-icon fa fa-truck"></i></div>
-					<div class="infobox-data">
-						<div class="infobox-content">Issuing</div>
-						<div class="infobox-content"></div>
-					</div>
-				</div>
-			</div>
-		</div> -->
 		<div class="hr hr32 hr-line"></div>
 		<div class="row">
 			<div class="col-sm-12">

@@ -26,5 +26,24 @@ class Admin extends CI_Controller{
 		$this->template->load('template','v_admin',$data);
     }
     
+    function grap(){
+                $this->db->select('count(id_brand) as jml,stok,nama_brand');
+                $this->db->from('tb_barang');
+                $this->db->join('tb_stok s','s.id_barang = tb_barang.id_barang');
+                $this->db->group_by('brand');   
+        $data1 = $this->db->get()->result();
+        
+
+        $this->db->select('count(id_brand) as jml,stok,nama_brand,nama_kategori');
+        $this->db->from('tb_barang');
+        $this->db->join('tb_brand b','b.id_brand = tb_barang.brand');
+        $this->db->join('tb_kategori k','k.id_kategori = tb_barang.kategori');
+        $this->db->join('tb_stok s','s.id_barang = tb_barang.id_barang');
+        $this->db->group_by('brand');   
+        $data = $this->db->get()->result();
+                print_r($data);
+    }
+
+    
 }
 ?>

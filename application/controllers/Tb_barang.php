@@ -27,9 +27,10 @@ class Tb_barang extends CI_Controller
         $tb_barang = $this->Tb_barang_model->get_all();
 
         $data = array(
-            'tb_barang_data' => $tb_barang
+            'tb_barang_data' => $tb_barang,
+            'kode' => $this->Tb_barang_model->kode()
         );
-
+        // print_r($data['kode']);
         $this->template->load('template','barang/tb_barang_list', $data);
     }
 
@@ -56,6 +57,7 @@ class Tb_barang extends CI_Controller
 
     public function create() 
     {
+        $kode = $this->Tb_barang_model->kode();
         $data = array(
                 'button' => 'Create',
                 'action' => site_url('tb_barang/create_action'),
@@ -70,7 +72,7 @@ class Tb_barang extends CI_Controller
                 'satuan' => @$this->db->get('tb_satuan'),
                 'brand' => @$this->db->get('tb_brand'),
                 'kategori' => @$this->db->get('tb_kategori'),
-        
+                'kode' => $this->Tb_barang_model->kode()
     );
     
         $this->template->load('template','barang/tb_barang_form', $data);
@@ -79,12 +81,13 @@ class Tb_barang extends CI_Controller
     public function create_action() 
     {
         $this->_rules();
+        $kode = $this->Tb_barang_model->kode();
 
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
             $data = array(
-                'part_number' => $this->input->post('part_number',TRUE),
+                'part_number' => $kode,
                 'nama_barang' => $this->input->post('nama_barang',TRUE),
                 'kategori' => $this->input->post('kategori',TRUE),
                 'brand' => $this->input->post('brand',TRUE),
@@ -178,7 +181,7 @@ class Tb_barang extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('part_number', 'part number', 'trim|required');
+	// $this->form_validation->set_rules('part_number', 'part number', 'trim|required');
 	$this->form_validation->set_rules('nama_barang', 'nama_barang', 'trim|required');
 	$this->form_validation->set_rules('kategori', 'kategori', 'trim|required');
 	$this->form_validation->set_rules('brand', 'brand', 'trim|required');
