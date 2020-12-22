@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2019 at 07:01 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.8
+-- Waktu pembuatan: 13 Nov 2020 pada 02.33
+-- Versi server: 10.4.6-MariaDB
+-- Versi PHP: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengguna`
+-- Struktur dari tabel `pengguna`
 --
 
 CREATE TABLE `pengguna` (
@@ -39,7 +39,7 @@ CREATE TABLE `pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pengguna`
+-- Dumping data untuk tabel `pengguna`
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `nama`, `username`, `password`, `email`, `level`, `ttl`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `pengguna` (`id_pengguna`, `nama`, `username`, `password`, `email`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_barang`
+-- Struktur dari tabel `tb_barang`
 --
 
 CREATE TABLE `tb_barang` (
@@ -70,7 +70,7 @@ CREATE TABLE `tb_barang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_brand`
+-- Struktur dari tabel `tb_brand`
 --
 
 CREATE TABLE `tb_brand` (
@@ -79,7 +79,7 @@ CREATE TABLE `tb_brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_brand`
+-- Dumping data untuk tabel `tb_brand`
 --
 
 INSERT INTO `tb_brand` (`id_brand`, `nama_brand`) VALUES
@@ -133,7 +133,7 @@ INSERT INTO `tb_brand` (`id_brand`, `nama_brand`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_issuing`
+-- Struktur dari tabel `tb_issuing`
 --
 
 CREATE TABLE `tb_issuing` (
@@ -147,7 +147,7 @@ CREATE TABLE `tb_issuing` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_issuing_item`
+-- Struktur dari tabel `tb_issuing_item`
 --
 
 CREATE TABLE `tb_issuing_item` (
@@ -161,7 +161,7 @@ CREATE TABLE `tb_issuing_item` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_issuing_temp`
+-- Struktur dari tabel `tb_issuing_temp`
 --
 
 CREATE TABLE `tb_issuing_temp` (
@@ -176,7 +176,7 @@ CREATE TABLE `tb_issuing_temp` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kategori`
+-- Struktur dari tabel `tb_kategori`
 --
 
 CREATE TABLE `tb_kategori` (
@@ -185,7 +185,7 @@ CREATE TABLE `tb_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_kategori`
+-- Dumping data untuk tabel `tb_kategori`
 --
 
 INSERT INTO `tb_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -195,7 +195,7 @@ INSERT INTO `tb_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_receiving`
+-- Struktur dari tabel `tb_receiving`
 --
 
 CREATE TABLE `tb_receiving` (
@@ -209,7 +209,7 @@ CREATE TABLE `tb_receiving` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_receiving_item`
+-- Struktur dari tabel `tb_receiving_item`
 --
 
 CREATE TABLE `tb_receiving_item` (
@@ -223,7 +223,7 @@ CREATE TABLE `tb_receiving_item` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_receiving_temp`
+-- Struktur dari tabel `tb_receiving_temp`
 --
 
 CREATE TABLE `tb_receiving_temp` (
@@ -238,7 +238,7 @@ CREATE TABLE `tb_receiving_temp` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_satuan`
+-- Struktur dari tabel `tb_satuan`
 --
 
 CREATE TABLE `tb_satuan` (
@@ -248,7 +248,7 @@ CREATE TABLE `tb_satuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_satuan`
+-- Dumping data untuk tabel `tb_satuan`
 --
 
 INSERT INTO `tb_satuan` (`id_satuan`, `nama_satuan`, `ket`) VALUES
@@ -266,7 +266,7 @@ INSERT INTO `tb_satuan` (`id_satuan`, `nama_satuan`, `ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_stok`
+-- Struktur dari tabel `tb_stok`
 --
 
 CREATE TABLE `tb_stok` (
@@ -279,137 +279,137 @@ CREATE TABLE `tb_stok` (
 --
 
 --
--- Indexes for table `pengguna`
+-- Indeks untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indexes for table `tb_barang`
+-- Indeks untuk tabel `tb_barang`
 --
 ALTER TABLE `tb_barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- Indexes for table `tb_brand`
+-- Indeks untuk tabel `tb_brand`
 --
 ALTER TABLE `tb_brand`
   ADD PRIMARY KEY (`id_brand`);
 
 --
--- Indexes for table `tb_issuing`
+-- Indeks untuk tabel `tb_issuing`
 --
 ALTER TABLE `tb_issuing`
   ADD PRIMARY KEY (`id_issuing`);
 
 --
--- Indexes for table `tb_issuing_item`
+-- Indeks untuk tabel `tb_issuing_item`
 --
 ALTER TABLE `tb_issuing_item`
   ADD PRIMARY KEY (`id_itemiss`),
   ADD KEY `FK_tb_issuing_item_tb_barang` (`id_barang`);
 
 --
--- Indexes for table `tb_kategori`
+-- Indeks untuk tabel `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `tb_receiving`
+-- Indeks untuk tabel `tb_receiving`
 --
 ALTER TABLE `tb_receiving`
   ADD PRIMARY KEY (`id_receiving`);
 
 --
--- Indexes for table `tb_receiving_item`
+-- Indeks untuk tabel `tb_receiving_item`
 --
 ALTER TABLE `tb_receiving_item`
   ADD PRIMARY KEY (`id_item`),
   ADD KEY `FK_tb_receiving_item_tb_barang` (`id_barang`);
 
 --
--- Indexes for table `tb_satuan`
+-- Indeks untuk tabel `tb_satuan`
 --
 ALTER TABLE `tb_satuan`
   ADD PRIMARY KEY (`id_satuan`);
 
 --
--- Indexes for table `tb_stok`
+-- Indeks untuk tabel `tb_stok`
 --
 ALTER TABLE `tb_stok`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `pengguna`
+-- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_barang`
+-- AUTO_INCREMENT untuk tabel `tb_barang`
 --
 ALTER TABLE `tb_barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `tb_brand`
+-- AUTO_INCREMENT untuk tabel `tb_brand`
 --
 ALTER TABLE `tb_brand`
   MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
--- AUTO_INCREMENT for table `tb_issuing`
+-- AUTO_INCREMENT untuk tabel `tb_issuing`
 --
 ALTER TABLE `tb_issuing`
   MODIFY `id_issuing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_issuing_item`
+-- AUTO_INCREMENT untuk tabel `tb_issuing_item`
 --
 ALTER TABLE `tb_issuing_item`
   MODIFY `id_itemiss` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `tb_kategori`
+-- AUTO_INCREMENT untuk tabel `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `tb_receiving`
+-- AUTO_INCREMENT untuk tabel `tb_receiving`
 --
 ALTER TABLE `tb_receiving`
   MODIFY `id_receiving` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `tb_receiving_item`
+-- AUTO_INCREMENT untuk tabel `tb_receiving_item`
 --
 ALTER TABLE `tb_receiving_item`
   MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `tb_satuan`
+-- AUTO_INCREMENT untuk tabel `tb_satuan`
 --
 ALTER TABLE `tb_satuan`
   MODIFY `id_satuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tb_issuing_item`
+-- Ketidakleluasaan untuk tabel `tb_issuing_item`
 --
 ALTER TABLE `tb_issuing_item`
   ADD CONSTRAINT `FK_tb_issuing_item_tb_barang` FOREIGN KEY (`id_barang`) REFERENCES `tb_barang` (`id_barang`);
 
 --
--- Constraints for table `tb_receiving_item`
+-- Ketidakleluasaan untuk tabel `tb_receiving_item`
 --
 ALTER TABLE `tb_receiving_item`
   ADD CONSTRAINT `FK_tb_receiving_item_tb_barang` FOREIGN KEY (`id_barang`) REFERENCES `tb_barang` (`id_barang`);

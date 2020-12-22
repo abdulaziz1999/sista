@@ -6,8 +6,8 @@ if (!defined('BASEPATH'))
 class Tb_user_model extends CI_Model
 {
 
-    public $table = 'tb_user';
-    public $id = 'id_user';
+    public $table = 'pengguna';
+    public $id = 'id_pengguna';
     public $order = 'DESC';
 
     function __construct()

@@ -30,7 +30,7 @@ class Tb_user extends CI_Controller
             'tb_user_data' => $tb_user
         );
 
-        $this->template->load('template','tb_user_list', $data);
+        $this->template->load('template','user/tb_user_list', $data);
     }
 
     public function read($id) 
@@ -161,7 +161,7 @@ class Tb_user extends CI_Controller
         $nourut = 1;
         //penulisan header
         header("Pragma: public");
-        header("Expires: 0");
+        header("Expires: 1");
         header("Cache-Control: must-revalidate, post-check=0,pre-check=0");
         header("Content-Type: application/force-download");
         header("Content-Type: application/octet-stream");
@@ -172,7 +172,7 @@ class Tb_user extends CI_Controller
         xlsBOF();
 
         $kolomhead = 0;
-        xlsWriteLabel($tablehead, $kolomhead++, "No");
+    xlsWriteLabel($tablehead, $kolomhead++, "No");
 	xlsWriteLabel($tablehead, $kolomhead++, "Nama User");
 	xlsWriteLabel($tablehead, $kolomhead++, "Password");
 	xlsWriteLabel($tablehead, $kolomhead++, "Hak Akses");
@@ -182,11 +182,11 @@ class Tb_user extends CI_Controller
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
-            xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_user);
+        xlsWriteNumber($tablebody, $kolombody++, $nourut);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->nama);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->password);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->hak_akses);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->avatar);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->username);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->level);
 
 	    $tablebody++;
             $nourut++;
