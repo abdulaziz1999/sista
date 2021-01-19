@@ -13,7 +13,7 @@
                     <div class="col-lg-6 col-5 text-right">
                       <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                          <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                          <li class="breadcrumb-item"><a href="<?= base_url()?>"><i class="fas fa-home"></i> Home</a></li>
                           <li class="breadcrumb-item active text-green" aria-current="page">Daftar Seminar</li>
                         </ol>
                       </nav>
