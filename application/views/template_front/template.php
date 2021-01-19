@@ -47,20 +47,20 @@
    <meta property="og:description" content="Start your development with a Dashboard for Bootstrap 4." />
    <meta property="og:site_name" content="Creative Tim" />
    <!-- Favicon -->
-   <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
+   <link rel="icon" href="<?= base_url()?>assets/img/brand/favicon.png" type="image/png">
    <!-- Fonts -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
    <!-- Icons -->
-   <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
-   <link rel="stylesheet" href="assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/nucleo/css/nucleo.css" type="text/css">
+   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
    <!-- Page plugins -->
-   <link rel="stylesheet" href="assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/vendor/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="assets/vendor/quill/dist/quill.core.css">
+   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/quill/dist/quill.core.css">
    <!-- Argon CSS -->
-   <link rel="stylesheet" href="assets/css/argon.min9f1e.css?v=1.1.0" type="text/css">
+   <link rel="stylesheet" href="<?= base_url()?>assets/css/argon.min9f1e.css?v=1.1.0" type="text/css">
    <!-- Google Tag Manager -->
  
    <!-- End Google Tag Manager -->
@@ -73,8 +73,8 @@
   <!-- Navabr -->
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-gradient-primary">
     <div class="container">
-      <a class="navbar-brand" href="./pages/dashboards/dashboard.html">
-        <img src="./assets/img/brand/white.png">
+      <a class="navbar-brand" href="<?= base_url()?>">
+        <img src="<?= base_url()?>assets/img/brand/white.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -83,8 +83,8 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="./pages/dashboards/dashboard.html">
-                <img src="./assets/img/brand/blue.png">
+              <a href="<?= base_url()?>">
+                <img src="<?= base_url()?>assets/img/brand/blue.png">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -187,30 +187,30 @@
   </footer>
    <!-- Argon Scripts -->
    <!-- Core -->
-    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/js-cookie/js.cookie.js"></script>
-    <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-    <script src="assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="<?= base_url()?>assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
    <!-- Optional JS -->
-   <script src="assets/vendor/onscreen/dist/on-screen.umd.min.js"></script>
-   <script src="assets/vendor/select2/dist/js/select2.min.js"></script>
-  <script src="assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-  <script src="assets/vendor/nouislider/distribute/nouislider.min.js"></script>
-  <script src="assets/vendor/quill/dist/quill.min.js"></script>
-  <script src="assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
-  <script src="assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/onscreen/dist/on-screen.umd.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/select2/dist/js/select2.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/nouislider/distribute/nouislider.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/quill/dist/quill.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
    <!-- Argon JS -->
-   <script src="assets/js/argon.min9f1e.js?v=1.1.0"></script>
+   <script src="<?= base_url()?>assets/js/argon.min9f1e.js?v=1.1.0"></script>
    <!-- Demo JS - remove this in your project -->
-   <script src="assets/js/demo.min.js"></script>
+   <script src="<?= base_url()?>assets/js/demo.min.js"></script>
 
    <noscript>
      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&amp;ev=PageView&amp;noscript=1" />
