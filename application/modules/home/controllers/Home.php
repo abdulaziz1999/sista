@@ -20,8 +20,7 @@ class Home extends CI_Controller
     public function index()
     {
 		$data['title']		= "Log Whatsapp Center";
-        // $this->template->load('template','log',$data);
-        $this->load->view('template_front/template',$data);
+        $this->template->load('template_front/template','home',$data);
 	}
 
 
