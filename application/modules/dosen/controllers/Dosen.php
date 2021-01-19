@@ -19,9 +19,8 @@ class Dosen extends CI_Controller
 
     public function index()
     {
-		$data['title']		= "Log Whatsapp Center";
+		$data['title']		= "Dosen";
         $this->template->load('template_back/template','dosen',$data);
-        // $this->load->view('template_back/template',$data);
 	}
 
 
