@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class Login extends CI_Controller
 {
 	
         
@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
 		$data['title']		= "Log Whatsapp Center";
-        $this->template->load('template_back/template','login',$data);
+        $this->template->load('template_front/template_login','login',$data);
         // $this->load->view('template_back/template',$data);
 	}
 
