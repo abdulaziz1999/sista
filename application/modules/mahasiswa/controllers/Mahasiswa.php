@@ -19,9 +19,8 @@ class Mahasiswa extends CI_Controller
 
     public function index()
     {
-		$data['title']		= "Log Whatsapp Center";
-        $this->template->load('template_back/template','dashboard',$data);
-        // $this->load->view('template_back/template',$data);
+		$data['title']		= "Mahasiswa";
+        $this->template->load('template_back/template','mahasiswa',$data);
 	}
 
 
