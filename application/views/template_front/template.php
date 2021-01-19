@@ -92,63 +92,58 @@
         </div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a href="./pages/dashboards/dashboard.html" class="nav-link">
-              <span class="nav-link-inner--text">Dashboard</span>
+            <a href="<?= base_url()?>" class="nav-link">
+              <span class="nav-link-inner--text">Home</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="./pages/examples/pricing.html" class="nav-link">
-              <span class="nav-link-inner--text">Pricing</span>
+            <a href="<?= base_url('jadwal')?>" class="nav-link">
+              <span class="nav-link-inner--text">Jadwal</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="./pages/examples/login.html" class="nav-link">
-              <span class="nav-link-inner--text">Login</span>
+            <a href="<?= base_url('seminar')?>" class="nav-link">
+              <span class="nav-link-inner--text">Daftar Seminar</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="./pages/examples/register.html" class="nav-link">
-              <span class="nav-link-inner--text">Register</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="./pages/examples/lock.html" class="nav-link">
-              <span class="nav-link-inner--text">Lock</span>
+            <a href="<?= base_url('berita')?>" class="nav-link">
+              <span class="nav-link-inner--text">Berita</span>
             </a>
           </li>
         </ul>
         <hr class="d-lg-none" />
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="" data-original-title="Like us on Facebook">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Like us on Facebook">
               <i class="fab fa-facebook-square"></i>
               <span class="nav-link-inner--text d-lg-none">Facebook</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Instagram">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Instagram">
               <i class="fab fa-instagram"></i>
               <span class="nav-link-inner--text d-lg-none">Instagram</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Twitter">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Twitter">
               <i class="fab fa-twitter-square"></i>
               <span class="nav-link-inner--text d-lg-none">Twitter</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="" data-original-title="Star us on Github">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Star us on Github">
               <i class="fab fa-github"></i>
               <span class="nav-link-inner--text d-lg-none">Github</span>
             </a>
           </li>
           <li class="nav-item d-none d-lg-block ml-lg-4">
-            <a href="https://www.creative-tim.com/product/argon-dashboard-pro" target="_blank" class="btn btn-neutral btn-icon">
+            <a href="<?= site_url('login')?>" class="btn btn-neutral btn-icon">
               <span class="btn-inner--icon">
-                <i class="fas fa-shopping-cart mr-2"></i>
+                <i class="fas fa-sign-in-alt mr-2"></i>
               </span>
-              <span class="nav-link-inner--text">Purchase now</span>
+              <span class="nav-link-inner--text">Login</span>
             </a>
           </li>
         </ul>
@@ -164,13 +159,9 @@
           <div class="row align-items-center">
             <div class="col-lg-6">
               <div class="pr-5">
-                <h1 class="display-2 text-white font-weight-bold mb-0">Argon Dashboard PRO</h1>
+                <h1 class="display-2 text-white font-weight-bold mb-0">Sistem Informasi Seminar Tugas Akhir</h1>
                 <h2 class="display-4 text-white font-weight-light">A beautiful premium dashboard for Bootstrap 4.</h2>
                 <p class="text-white mt-4">Argon perfectly combines reusable HTML and modular CSS with a modern styling and beautiful markup throughout each HTML template in the pack.</p>
-                <div class="mt-5">
-                  <a href="./pages/dashboards/dashboard.html" class="btn btn-neutral my-2">Explore Dashboard</a>
-                  <a href="https://www.creative-tim.com/product/argon-dashboard-pro" class="btn btn-default my-2">Purchase now</a>
-                </div>
               </div>
             </div>
             <div class="col-lg-6">
