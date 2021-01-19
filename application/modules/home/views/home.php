@@ -12,54 +12,34 @@
                   SISTA dapat digunakan oleh dua jenis pengguna yaitu administrator dan mahasiswa baik sebagai pemakalah maupun sebagai peserta seminar.</p>
               </div>
             </div>
-            <div class="col-lg-12">
-              <div class="row pt-5">
-                <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow mb-4">
-                        <i class="ni ni-active-40"></i>
+                <main class="col-12 ct-content" role="main">
+                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100 h-50" src="https://fsm.uksw.edu/public/upload/2020/07/29/USER320200729145848.png" alt="First slide" />
                       </div>
-                      <h5 class="h3">Components</h5>
-                      <p>Argon comes with over 70 handcrafted components.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow mb-4">
-                        <i class="ni ni-active-40"></i>
+                      <div class="carousel-item">
+                        <img class="d-block w-100 h-50" src="https://fsm.uksw.edu/public/upload/2020/07/29/USER320200729151823.png" alt="Second slide" />
                       </div>
-                      <h5 class="h3">Components</h5>
-                      <p>Argon comes with over 70 handcrafted components.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="icon icon-shape bg-gradient-yellow text-white rounded-circle shadow mb-4">
-                        <i class="ni ni-active-40"></i>
+                      <div class="carousel-item">
+                        <img class="d-block w-100 h-50" src="https://fsm.uksw.edu/public/upload/2020/07/29/USER320200729151823.png" alt="Third slide" />
                       </div>
-                      <h5 class="h3">Components</h5>
-                      <p>Argon comes with over 70 handcrafted components.</p>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow mb-4">
-                        <i class="ni ni-active-40"></i>
-                      </div>
-                      <h5 class="h3">Components</h5>
-                      <p>Argon comes with over 70 handcrafted components.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </main>
           </div>
         </div>
       </div>
