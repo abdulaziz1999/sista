@@ -144,12 +144,41 @@
             </a>
           </li>
           <li class="nav-item d-none d-lg-block ml-lg-4">
-            <a href="<?= site_url('login')?>" class="btn btn-neutral btn-icon">
-              <span class="btn-inner--icon">
-                <i class="fas fa-sign-in-alt mr-2"></i>
-              </span>
-              <span class="nav-link-inner--text">Login</span>
-            </a>
+            <?php if($this->session->userdata('id_user') == FALSE):?>
+              <a href="<?= site_url('login')?>" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon">
+                  <i class="fas fa-sign-in-alt mr-2"></i>
+                </span>
+                <span class="nav-link-inner--text">Login</span>
+              </a>
+            <?php else:?>
+              <a class="nav-link pt-0 mb--5 " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="media align-items-center">
+                  <span class="avatar avatar-sm rounded-circle">
+                    <img alt="Image placeholder" src="<?= base_url()?>assets/img/theme/team-1.jpg">
+                  </span>
+                  <div class="media-body ml-2 d-none d-lg-block">
+                    <span class="mb-0 text-sm text-white font-weight-bold"><?= $this->session->userdata('nama') ?></span>
+                  </div>
+                </div>
+              </a>
+              <div class="btn-group">
+                <div class="dropdown-menu">
+                  <div class="dropdown-header noti-title">
+                    <h6 class="text-overflow m-0">Welcome! <strong class="text-green"><?= $this->session->userdata('nama') ?></strong></h6>
+                  </div>
+                  <a href="#!" class="dropdown-item">
+                    <i class="ni ni-single-02"></i>
+                    <span>My profile</span>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="<?= base_url('login/logout')?>" class="dropdown-item">
+                    <i class="ni ni-user-run"></i>
+                    <span>Logout</span>
+                  </a>
+                </div>
+              </div>
+            <?php endif;?>
           </li>
         </ul>
       </div>
