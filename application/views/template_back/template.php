@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard PRO - Premium Bootstrap 4 Admin Template</title>
+  <title><?= $title;?></title>
   <!-- Extra details for Live View on GitHub Pages -->
   <!-- Canonical SEO -->
   <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/sweetalert2/dist/sweetalert2.min.css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url()?>assets/css/argon.min9f1e.css?v=1.1.0" type="text/css">
 
@@ -74,38 +75,38 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="<?= base_url('dashboard')?>" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-dashboards">
+              <a class="nav-link <?= $this->uri->segment(1) == 'dashboard' ? 'active' : ''?>" href="<?= base_url('dashboard')?>" >
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Dashboards</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#navbar-tables" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
+              <a class="nav-link <?= $this->uri->segment(1) == 'dosen' || $this->uri->segment(1) == 'prodi' || $this->uri->segment(1) == 'mahasiswa' ? 'active' : ''?>" href="#navbar-tables" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
                 <i class="ni ni-align-left-2 text-default"></i>
                 <span class="nav-link-text">Master Data</span>
               </a>
-              <div class="collapse" id="navbar-tables">
+              <div class="collapse <?= $this->uri->segment(1) == 'dosen' || $this->uri->segment(1) == 'prodi' || $this->uri->segment(1) == 'mahasiswa' ? 'show' : ''?>"" id="navbar-tables">
                 <ul class="nav nav-sm flex-column">
                   <li class="nav-item">
-                    <a href="<?= base_url('dosen')?>" class="nav-link">Dosen</a>
+                    <a href="<?= base_url('dosen')?>" class="nav-link <?= $this->uri->segment(1) == 'dosen' ? 'active' : ''?>">Dosen</a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('mahasiswa')?>" class="nav-link">Mahasiswa</a>
+                    <a href="<?= base_url('mahasiswa')?>" class="nav-link <?= $this->uri->segment(1) == 'mahasiswa' ? 'active' : ''?>">Mahasiswa</a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('prodi')?>" class="nav-link">Prodi</a>
+                    <a href="<?= base_url('prodi')?>" class="nav-link <?= $this->uri->segment(1) == 'prodi' ? 'active' : ''?>">Prodi</a>
                   </li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url('df_seminar')?>">
+              <a class="nav-link <?= $this->uri->segment(1) == 'df_seminar' ? 'active' : ''?>" href="<?= base_url('df_seminar')?>">
                 <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Daftar Seminar</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url('user')?>">
+              <a class="nav-link <?= $this->uri->segment(1) == 'user' ? 'active' : ''?>" href="<?= base_url('user')?>">
                 <i class="ni ni-single-02 text-info"></i>
                 <span class="nav-link-text">User</span>
               </a>
@@ -159,19 +160,7 @@
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
-          <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
-            <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <input class="form-control" placeholder="Search" type="text">
-              </div>
-            </div>
-            <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </form>
+          <marquee behavior="alternate" direction="right"><h1 class="display-4 text-white font-weight-bold">Sistem Informasi Seminar Tugas Akhir</h1></marquee>
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -354,7 +343,7 @@
                     <img alt="Image placeholder" src="<?= base_url()?>assets/img/theme/team-4.jpg">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                    <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('nama')?></span>
                   </div>
                 </div>
               </a>
@@ -394,6 +383,7 @@
     <?= $contents?>
     
   </div>
+  
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="<?= base_url()?>assets/vendor/jquery/dist/jquery.min.js"></script>
@@ -412,10 +402,73 @@
   <script src="<?= base_url()?>assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
   <script src="<?= base_url()?>assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
   <script src="<?= base_url()?>assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+  <script src="<?= base_url()?>assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
   <!-- Argon JS -->
   <script src="<?= base_url()?>assets/js/argon.min9f1e.js?v=1.1.0"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="<?= base_url()?>assets/js/demo.min.js"></script>
+
+  <?php if($this->uri->segment(1) == 'df_seminar'):?>
+      <script>
+        function showDataEdit(id) 
+                {
+                    $.ajax({
+                        url: "<?=site_url('df_seminar/dataEdit');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+          function deleteSeminar(id){
+                      r = confirm("Anda Yakin Ingin Menghapus");
+                      if (r == true) {
+                        window.location="<?=site_url('df_seminar/delete/')?>"+id;
+                      } else {
+                        return false;
+                      }
+                      
+                }
+
+          function dataEditPeserta(id) 
+                {
+                    $.ajax({
+                        url: "<?=site_url('df_seminar/dataEditPeserta');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+          function deletePeserta(id){
+                      r = confirm("Anda Yakin Ingin Menghapus");
+                      if (r == true) {
+                        window.location="<?=site_url('df_seminar/deletePeserta/')?>"+id;
+                      } else {
+                        return false;
+                      }
+                      
+                }
+      </script>
+    <?php endif;?>
+
+    <?php if($this->uri->segment(2) == ''):?>
+      <script>
+        
+      </script>
+    <?php endif;?>
 
 </body>
 
