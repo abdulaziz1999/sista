@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+    exit('No direct script access allowed'); 
 
 class Seminar extends CI_Controller
 {
@@ -19,7 +19,10 @@ class Seminar extends CI_Controller
 
     public function index()
     {
-		$data['title']		= "Log Whatsapp Center";
+        $data['title']		= "Log Whatsapp Center";
+        $data['dosen']          = $this->db->get('tb_dosen')->result();
+        $data['seminar']        = $this->db->get('tb_seminar')->result();
+        $data['prodi']          = $this->db->get('tb_prodi')->result();
         $this->template->load('template_front/template','seminar',$data);
 	}
 
