@@ -2,11 +2,11 @@
     <!-- Header -->
     <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
       <div class="container">
-        <div class="header-body text-center mb-7">
+        <div class="header-body text-center mb-5">
           <div class="row justify-content-center">
-            <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+            <div class="col-xl-8 col-lg-6 col-md-8 px-5">
               <h1 class="text-white">Create an account</h1>
-              <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for free.</p>
+              <h2 class="display-4 text-white font-weight-bold">Sistem Informasi Seminar Tugas Akhir</h2>
             </div>
           </div>
         </div>
@@ -25,21 +25,8 @@
           <div class="card bg-secondary border-0">
             <div class="card-header bg-transparent pb-5">
               <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
-              <div class="text-center">
-                <a href="#" class="btn btn-neutral btn-icon mr-4">
-                  <span class="btn-inner--icon"><img src="<?= base_url()?>assets/img/icons/common/github.svg"></span>
-                  <span class="btn-inner--text">Github</span>
-                </a>
-                <a href="#" class="btn btn-neutral btn-icon">
-                  <span class="btn-inner--icon"><img src="<?= base_url()?>assets/img/icons/common/google.svg"></span>
-                  <span class="btn-inner--text">Google</span>
-                </a>
-              </div>
             </div>
             <div class="card-body px-lg-5 py-lg-5">
-              <div class="text-center text-muted mb-4">
-                <small>Or sign up with credentials</small>
-              </div>
               <form role="form">
                 <div class="form-group">
                   <div class="input-group input-group-merge input-group-alternative mb-3">
