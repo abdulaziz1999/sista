@@ -19,10 +19,28 @@ class Jadwal extends CI_Controller
 
     public function index()
     {
-		$data['title']		= "Log Whatsapp Center";
+        $data['title']		= "Jadwal Seminar TA";
+        $this->db->join('tb_seminar sm','sm.id_seminar = s.seminar_id');
+        $data['daftar_seminar'] = $this->db->get('tb_daftar_seminar s')->result();
         $this->template->load('template_front/template','jadwal',$data);
 	}
 
-
+    function detail($id){
+        $data['title']		     = "Detail Seminar Tugas Akhir";
+                                  $this->db->join('tb_prodi p','p.id_prodi = s.prodi_id');
+        $data['peserta']        = $this->db->get_where('tb_peserta_seminar s',['id_seminar' => $id])->result();
+        $data['prodi']          = $this->db->get('tb_prodi')->result();
+        $this->template->load('template_front/template','detailJadwal',$data);
+        
+      }
+    
+    function daftar($id){
+        $data['title']		     = "Daftar Peserta Seminar Tugas Akhir";
+                                  $this->db->join('tb_prodi p','p.id_prodi = s.prodi_id');
+        $data['peserta']        = $this->db->get_where('tb_peserta_seminar s',['id_seminar' => $id])->result();
+        $data['prodi']          = $this->db->get('tb_prodi')->result();
+        $this->template->load('template_front/template','daftar',$data);
+        
+      }
 }
 
