@@ -21,6 +21,7 @@ class Home extends CI_Controller
     {
 		$data['title']		= "Log Whatsapp Center";
         $this->template->load('template_front/template','home',$data);
+        
 	}
 
 
