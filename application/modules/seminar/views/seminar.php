@@ -26,136 +26,145 @@
                     </div>
                     <!-- Card body -->
                     <div class="card-body">
-                      <form>
-                        <!-- Input groups with icon -->
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                            <label class="form-control-label" for="exampleDatepicker">NIM</label>
-                              <div class="input-group input-group-merge">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      <form method="POST" action="<?= base_url('df_seminar/create')?>">
+                            <!-- Input groups with icon -->
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                <label class="form-control-label" for="exampleDatepicker">NIM</label>
+                                  <div class="input-group input-group-merge">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input class="form-control" name="nim" placeholder="NIM" type="text">
+                                  </div>
                                 </div>
-                                <input class="form-control" placeholder="NIM" type="text">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                            <label class="form-control-label" for="exampleDatepicker">Nama</label>
-                              <div class="input-group input-group-merge">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <div class="form-group">
+                                <label class="form-control-label" for="exampleDatepicker">Nama</label>
+                                  <div class="input-group input-group-merge">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    </div>
+                                    <input class="form-control" name="nama" placeholder="Nama" type="text">
+                                  </div>
                                 </div>
-                                <input class="form-control" placeholder="Nama" type="text">
+                              </div> 
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                <label class="form-control-label" for="exampleDatepicker">Judul Tugas Akhir</label>
+                                  <div class="input-group input-group-merge">
+                                    <textarea class="form-control" name="judul_ta" placeholder="Judul Tugas Akhir" name="" id="" cols="30" rows="6"></textarea>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                            <label class="form-control-label" for="exampleDatepicker">Judul Tugas Akhir</label>
-                              <div class="input-group input-group-merge">
-                                <textarea class="form-control" placeholder="Judul Tugas Akhir" name="" id="" cols="30" rows="6"></textarea>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Prodi</label>
+                                  <div class="input-group input-group-merge">
+                                    <select name="prodi_id" class="form-control">
+                                      <option disabled selected> --- Pilih Prodi --- </option>
+                                      <?php foreach($prodi as $row):?>
+                                        <option value="<?=$row->id_prodi?>"><?= $row->nama_prodi?></option>
+                                      <?php endforeach;?>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Seminar</label>
+                                  <div class="input-group input-group-merge">
+                                    <select name="seminar_id" class="form-control" >
+                                      <option disabled selected> --- Pilih Seminar --- </option>
+                                      <?php foreach($seminar as $row):?>
+                                        <option value="<?=$row->id_seminar?>"><?= $row->nama_seminar?></option>
+                                      <?php endforeach;?>
+                                    </select>
+                                  </div>
+                                </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Prodi</label>
-                              <div class="input-group input-group-merge">
-                                <select class="form-control">
-                                  <option disabled selected> --- Pilih Prodi --- </option>
-                                  <option>Sistem Informasi</option>
-                                  <option>Teknik Informatika</option>
-                                </select>
+                            <!-- Input groups with icon -->
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Tanggal Seminar</label>
+                                  <div class="input-group input-group-merge">
+                                  <input class="form-control" name="tgl_seminar" placeholder="Nama" type="date">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Pembimbing</label>
+                                  <div class="input-group input-group-merge">
+                                    <select name="pembimbing" class="form-control" >
+                                      <option disabled selected> --- Pilih Pembimbing --- </option>
+                                      <?php foreach($dosen as $row):?>
+                                        <option value="<?=$row->id_dosen?>"><?= $row->nama_dosen?></option>
+                                      <?php endforeach;?>
+                                    </select>
+                                  </div>
+                                </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Seminar</label>
-                              <div class="input-group input-group-merge">
-                                <select class="form-control" data-toggle="select">
-                                  <option>Sistem Informasi</option>
-                                  <option>Teknik Informatika</option>
-                                </select>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Jam Seminar</label>
+                                  <div class="input-group input-group-merge">
+                                  <input class="form-control" name="jam_seminar" placeholder="Nama" type="time">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Penguji 1</label>
+                                  <div class="input-group input-group-merge">
+                                    <select class="form-control" name="penguji1" >
+                                    <option disabled selected> --- Pilih Penguji 1 --- </option>
+                                      <?php foreach($dosen as $row):?>
+                                        <option value="<?=$row->id_dosen?>"><?= $row->nama_dosen?></option>
+                                      <?php endforeach;?>
+                                    </select>
+                                  </div>
+                                </div>
+                                </div>
                               </div>
                             </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- Input groups with icon -->
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Tanggal Seminar</label>
-                              <div class="input-group input-group-merge">
-                              <input class="form-control" placeholder="Nama" type="date">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Ruangan</label>
+                                  <div class="input-group input-group-merge">
+                                  <input class="form-control" name="ruang" placeholder="Ruangan" type="text">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                <div class="form-group">
+                                  <label class="form-control-label" for="exampleDatepicker">Penguji 2</label>
+                                  <div class="input-group input-group-merge">
+                                    <select class="form-control" name="penguji2" >
+                                      <option disabled selected> --- Pilih Penguji 2 --- </option>
+                                      <?php foreach($dosen as $row):?>
+                                        <option value="<?=$row->id_dosen?>"><?= $row->nama_dosen?></option>
+                                      <?php endforeach;?>
+                                    </select>
+                                  </div>
+                                </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Pembimbing</label>
-                              <div class="input-group input-group-merge">
-                                <select class="form-control" data-toggle="select">
-                                  <option>Sistem Informasi</option>
-                                  <option>Teknik Informatika</option>
-                                </select>
-                              </div>
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Jam Seminar</label>
-                              <div class="input-group input-group-merge">
-                              <input class="form-control" placeholder="Nama" type="time">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Penguji 1</label>
-                              <div class="input-group input-group-merge">
-                                <select class="form-control" data-toggle="select">
-                                  <option>Sistem Informasi</option>
-                                  <option>Teknik Informatika</option>
-                                </select>
-                              </div>
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Ruangan</label>
-                              <div class="input-group input-group-merge">
-                              <input class="form-control" placeholder="Ruangan" type="text">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                            <div class="form-group">
-                              <label class="form-control-label" for="exampleDatepicker">Penguji 2</label>
-                              <div class="input-group input-group-merge">
-                                <select class="form-control" data-toggle="select">
-                                  <option>Sistem Informasi</option>
-                                  <option>Teknik Informatika</option>
-                                </select>
-                              </div>
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-md">Daftar</button>
+                            <button type="submit" class="btn btn-primary btn-md">Daftar</button>
                       </form>
                     </div>
                   </div>
