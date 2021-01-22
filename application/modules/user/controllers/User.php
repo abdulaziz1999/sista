@@ -20,7 +20,7 @@ class User extends CI_Controller
     public function index()
     {
 		$data['title']		= "Dosen";
-        $this->template->load('template_back/template','dosen',$data);
+        $this->template->load('template_back/template','user',$data);
     }
 
     function create(){
