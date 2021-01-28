@@ -7,7 +7,7 @@
             <div class="col-lg-12">
               <div class="pr-5">
               <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-sm-7">
+                    <div class="col-lg-6 col-sm-9">
                       <h2 class="display-4 text-white font-weight-bold">Sistem Informasi Seminar Tugas Akhir</h2>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
@@ -19,7 +19,7 @@
                       </nav>
                     </div>
                   </div>
-                  <section class="section section-lg pt-lg-7 mt--7">
+                  <section class="section section-lg pt-lg-7 mt--3">
                     <div class="container">
                       <div class="row justify-content-center">
                         <div class="col-lg-12">
