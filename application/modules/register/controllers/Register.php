@@ -19,9 +19,8 @@ class Register extends CI_Controller
 
     public function index()
     {
-		$data['title']		= "Log Whatsapp Center";
+		$data['title']		= "Registrasi";
         $this->template->load('template_front/template_login','register',$data);
-        // $this->load->view('template_back/template',$data);
 	}
 
 
