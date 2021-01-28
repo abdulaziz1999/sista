@@ -19,7 +19,7 @@ class Berita extends CI_Controller
 
     public function index()
     {
-		$data['title']		= "Berita";
+		$data['title']		= "Berita Seminar TA";
         $this->template->load('template_front/template','berita',$data);
 	}
 
