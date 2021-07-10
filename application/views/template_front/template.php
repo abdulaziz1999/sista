@@ -20,7 +20,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
    <meta name="author" content="Creative Tim">
-   <title>Argon Dashboard PRO - Premium Bootstrap 4 Admin Template</title>
+   <title><?= $title?></title>
    <!-- Extra details for Live View on GitHub Pages -->
    <!-- Canonical SEO -->
    <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
@@ -61,6 +61,7 @@
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/quill/dist/quill.core.css">
    <!-- Argon CSS -->
    <link rel="stylesheet" href="<?= base_url()?>assets/css/argon.min9f1e.css?v=1.1.0" type="text/css">
+   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/animate.css/animate.min.css">
    <!-- Google Tag Manager -->
  
    <!-- End Google Tag Manager -->
@@ -119,31 +120,7 @@
         </ul>
         <hr class="d-lg-none" />
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Like us on Facebook">
-              <i class="fab fa-facebook-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Facebook</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Instagram">
-              <i class="fab fa-instagram"></i>
-              <span class="nav-link-inner--text d-lg-none">Instagram</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Twitter">
-              <i class="fab fa-twitter-square"></i>
-              <span class="nav-link-inner--text d-lg-none">Twitter</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Star us on Github">
-              <i class="fab fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>
-            </a>
-          </li>
-          <li class="nav-item d-none d-lg-block ml-lg-4">
+          <li class="nav-item align-items-lg-center ml-lg-auto">
             <?php if($this->session->userdata('id_user') == FALSE):?>
               <a href="<?= site_url('login')?>" class="btn btn-neutral btn-icon">
                 <span class="btn-inner--icon">
@@ -167,7 +144,7 @@
                   <div class="dropdown-header noti-title">
                     <h6 class="text-overflow m-0">Welcome! <strong class="text-green"><?= $this->session->userdata('nama') ?></strong></h6>
                   </div>
-                  <a href="#!" class="dropdown-item">
+                  <a href="<?= site_url('profile')?>" class="dropdown-item">
                     <i class="ni ni-single-02"></i>
                     <span>My profile</span>
                   </a>
@@ -192,24 +169,11 @@
       <div class="row align-items-center justify-content-xl-between">
         <div class="col-xl-6">
           <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+            &copy; <?= date('Y')?> <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">SISTA</a>
           </div>
         </div>
         <div class="col-xl-6">
-          <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
-            </li>
-          </ul>
+          
         </div>
       </div>
     </div>
@@ -236,14 +200,42 @@
     <script src="<?= base_url()?>assets/vendor/quill/dist/quill.min.js"></script>
     <script src="<?= base_url()?>assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
     <script src="<?= base_url()?>assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <script src="<?= base_url()?>assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
    <!-- Argon JS -->
    <script src="<?= base_url()?>assets/js/argon.min9f1e.js?v=1.1.0"></script>
    <!-- Demo JS - remove this in your project -->
    <script src="<?= base_url()?>assets/js/demo.min.js"></script>
+    
+   <script>
+    <?php 
+    $sukses = $this->session->flashdata('logindulu'); 
+    $update = $this->session->flashdata('updateProfile'); 
+    if($sukses):?>
+      $.notify("<i class='ni ni-notification-70'></i> Silahkan login terlebih dahulu ",{ type: "warning"});
+    <?php elseif($update):?>
+      $.notify("<i class='ni ni-notification-70'></i> Data Profile berhasil di update ",{ type: "success"});
+    <?php endif;?>
+    </script>
 
-   <noscript>
-     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&amp;ev=PageView&amp;noscript=1" />
-   </noscript>
+    <?php if($this->uri->segment(1) == 'berita'):?>
+      <script>
+        function showDataEdit(id){
+                    $.ajax({
+                        url: "<?=site_url('berita/dataEdit');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+      </script>
+    <?php endif;?>
  </body>
 
- </html>
+ </html> 

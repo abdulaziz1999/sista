@@ -44,6 +44,8 @@
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/sweetalert2/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/quill/dist/quill.core.css" type="text/css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/animate.css/animate.min.css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url()?>assets/css/argon.min9f1e.css?v=1.1.0" type="text/css">
 
@@ -76,13 +78,13 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link <?= $this->uri->segment(1) == 'dashboard' ? 'active' : ''?>" href="<?= base_url('dashboard')?>" >
-                <i class="ni ni-shop text-primary"></i>
+                <i class="ni ni-shop text-warning"></i>
                 <span class="nav-link-text">Dashboards</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link <?= $this->uri->segment(1) == 'dosen' || $this->uri->segment(1) == 'prodi' || $this->uri->segment(1) == 'mahasiswa' ? 'active' : ''?>" href="#navbar-tables" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
-                <i class="ni ni-align-left-2 text-default"></i>
+                <i class="ni ni-folder-17 text-blue"></i>
                 <span class="nav-link-text">Master Data</span>
               </a>
               <div class="collapse <?= $this->uri->segment(1) == 'dosen' || $this->uri->segment(1) == 'prodi' || $this->uri->segment(1) == 'mahasiswa' ? 'show' : ''?>"" id="navbar-tables">
@@ -112,43 +114,18 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link <?= $this->uri->segment(1) == 'berita_adm' ? 'active' : ''?>" href="<?= base_url('berita_adm')?>">
+                <i class="ni ni-single-copy-04 text-yellow"></i>
+                <span class="nav-link-text">Berita</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="<?= base_url('login/logout')?>">
                 <i class="ni ni-user-run text-red"></i>
                 <span class="nav-link-text">Keluar</span>
               </a>
             </li>
           </ul>
-          <!-- Divider -->
-          <!-- <hr class="my-3"> -->
-          <!-- Heading -->
-          <!-- <h6 class="navbar-heading p-0 text-muted">Documentation</h6> -->
-          <!-- Navigation -->
-          <!-- <ul class="navbar-nav mb-md-3">
-            <li class="nav-item">
-              <a class="nav-link" href="<?= base_url()?>docs/getting-started/overview.html" target="_blank">
-                <i class="ni ni-spaceship"></i>
-                <span class="nav-link-text">Getting started</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= base_url()?>docs/foundation/colors.html" target="_blank">
-                <i class="ni ni-palette"></i>
-                <span class="nav-link-text">Foundation</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= base_url()?>docs/components/alerts.html" target="_blank">
-                <i class="ni ni-ui-04"></i>
-                <span class="nav-link-text">Components</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= base_url()?>docs/plugins/charts.html" target="_blank">
-                <i class="ni ni-chart-pie-35"></i>
-                <span class="nav-link-text">Plugins</span>
-              </a>
-            </li>
-          </ul> -->
         </div>
       </div>
     </div>
@@ -172,8 +149,7 @@
                   <i class="sidenav-toggler-line"></i>
                 </div>
               </div>
-            </li>
-            
+            </li>       
           </ul>
           <ul class="navbar-nav align-items-center ml-auto ml-md-0">
             <li class="nav-item dropdown">
@@ -191,24 +167,12 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Welcome!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
+                <a href="<?= base_url('profile')?>" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
-                  <span>My profile</span>
-                </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-settings-gear-65"></i>
-                  <span>Settings</span>
-                </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-calendar-grid-58"></i>
-                  <span>Activity</span>
-                </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-support-16"></i>
-                  <span>Support</span>
+                  <span>Profile</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
+                <a href="<?= base_url('login/logout')?>" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>
@@ -218,7 +182,6 @@
         </div>
       </div>
     </nav>
-    <!-- Header -->
     <!-- Header -->
     <?= $contents?>
     
@@ -243,15 +206,15 @@
   <script src="<?= base_url()?>assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
   <script src="<?= base_url()?>assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
   <script src="<?= base_url()?>assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script src="<?= base_url()?>assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
   <!-- Argon JS -->
   <script src="<?= base_url()?>assets/js/argon.min9f1e.js?v=1.1.0"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="<?= base_url()?>assets/js/demo.min.js"></script>
 
-  <?php if($this->uri->segment(1) == 'df_seminar'):?>
+    <?php if($this->uri->segment(1) == 'df_seminar'):?>
       <script>
-        function showDataEdit(id) 
-                {
+        function showDataEdit(id){
                     $.ajax({
                         url: "<?=site_url('df_seminar/dataEdit');?>",
                         type: "POST",
@@ -304,11 +267,165 @@
       </script>
     <?php endif;?>
 
-    <?php if($this->uri->segment(2) == ''):?>
+    <?php if($this->uri->segment(1) == 'berita_adm'):?>
       <script>
-        
+        function showBeritaEdit(id){
+                    $.ajax({
+                        url: "<?=site_url('berita_adm/dataEdit');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+          function deleteBerita(id){
+                      r = confirm("Anda Yakin Ingin Menghapus");
+                      if (r == true) {
+                        window.location="<?=site_url('berita_adm/delete/')?>"+id;
+                      } else {
+                        return false;
+                      }
+                      
+                }
       </script>
     <?php endif;?>
+
+    <?php if($this->uri->segment(1) == 'dosen'):?>
+      <script>
+        function showDosenEdit(id){
+                    $.ajax({
+                        url: "<?=site_url('dosen/dataEdit');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+          function deleteDosen(id){
+                      r = confirm("Anda Yakin Ingin Menghapus");
+                      if (r == true) {
+                        window.location="<?=site_url('dosen/delete/')?>"+id;
+                      } else {
+                        return false;
+                      }
+                      
+                }
+      </script>
+    <?php endif;?>
+
+    <?php if($this->uri->segment(1) == 'prodi'):?>
+      <script>
+        function showProdiEdit(id){
+                    $.ajax({
+                        url: "<?=site_url('prodi/dataEdit');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+          function deleteProdi(id){
+                      r = confirm("Anda Yakin Ingin Menghapus");
+                      if (r == true) {
+                        window.location="<?=site_url('prodi/delete/')?>"+id;
+                        $.notify("<i class='ni ni-notification-70'></i> Data Berhasil dihapus",{ type: "danger"});
+                      } else {
+                        return false;
+                      }
+                      
+                }
+      </script>
+    <?php endif;?>
+
+    <?php if($this->uri->segment(1) == 'mahasiswa'):?>
+      <script>
+        function showMahasiswaEdit(id){
+                    $.ajax({
+                        url: "<?=site_url('mahasiswa/dataEdit');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+          function deleteMahasiswa(id){
+                      r = confirm("Anda Yakin Ingin Menghapus");
+                      if (r == true) {
+                        window.location="<?=site_url('mahasiswa/delete/')?>"+id;
+                      } else {
+                        return false;
+                      }
+                      
+                }
+      </script>
+    <?php endif;?>
+
+    <?php if($this->uri->segment(1) == 'user'):?>
+      <script>
+        function showUserEdit(id){
+                    $.ajax({
+                        url: "<?=site_url('user/dataEdit');?>",
+                        type: "POST",
+                        data: {id: id},
+                        dataType: "html",
+                        beforeSend:function(){
+                        $('#data_edit').html("<img style='margin-left:240px' src='<?=base_url()?>assets/img/icons/loader.gif'>");
+                  },
+                        success: function (response) {
+                            $('#data_edit').empty();
+                            $('#data_edit').append(response);
+                        }
+                    });
+                }
+          function deleteUser(id){
+                      r = confirm("Anda Yakin Ingin Menghapus");
+                      if (r == true) {
+                        window.location="<?=site_url('user/delete/')?>"+id;
+                      } else {
+                        return false;
+                      }
+                      
+                }
+      </script>
+    <?php endif;?>
+    
+    <script>
+    <?php 
+    $sukses = $this->session->flashdata('sukses'); 
+    $hapus  = $this->session->flashdata('hapus'); 
+    $update = $this->session->flashdata('update'); 
+    if($sukses):?>
+      $.notify("<i class='ni ni-notification-70'></i> Data Berhasil Ditambahkan",{ type: "success"});
+    <?php elseif($hapus):?>
+      $.notify("<i class='ni ni-notification-70'></i> Data Berhasil Dihapus",{ type: "danger"});
+    <?php elseif($update):?>
+      $.notify("<i class='ni ni-notification-70'></i> Data Berhasil Update",{ type: "info"});
+    <?php endif;?>
+    </script>
 
 </body>
 

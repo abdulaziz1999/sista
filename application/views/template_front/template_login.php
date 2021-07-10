@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard PRO - Premium Bootstrap 4 Admin Template</title>
+  <title><?= $title?></title>
   <!-- Extra details for Live View on GitHub Pages -->
   <!-- Canonical SEO -->
   <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
@@ -55,6 +55,7 @@
   <link rel="stylesheet" href="<?= base_url()?>assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?= base_url()?>assets/css/argon.min9f1e.css?v=1.1.0" type="text/css">
+  <link rel="stylesheet" href="<?= base_url()?>assets/vendor/animate.css/animate.min.css">
 
 </head>
 
@@ -65,7 +66,7 @@
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="../dashboards/dashboard.html">
+      <a class="navbar-brand" href="<?= base_url('home')?>">
         <img src="<?= base_url()?>assets/img/brand/white.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,7 +76,7 @@
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="../dashboards/dashboard.html">
+              <a href="<?= base_url('home')?>">
                 <img src="<?= base_url()?>assets/img/brand/blue.png">
               </a>
             </div>
@@ -111,30 +112,6 @@
             </ul>
             <hr class="d-lg-none" />
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-            <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Like us on Facebook">
-                <i class="fab fa-facebook-square"></i>
-                <span class="nav-link-inner--text d-lg-none">Facebook</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Instagram">
-                <i class="fab fa-instagram"></i>
-                <span class="nav-link-inner--text d-lg-none">Instagram</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Follow us on Twitter">
-                <i class="fab fa-twitter-square"></i>
-                <span class="nav-link-inner--text d-lg-none">Twitter</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="" data-original-title="Star us on Github">
-                <i class="fab fa-github"></i>
-                <span class="nav-link-inner--text d-lg-none">Github</span>
-                </a>
-            </li>
             <li class="nav-item d-none d-lg-block ml-lg-4">
                 <a href="<?= site_url('login')?>" class="btn btn-neutral btn-icon">
                 <span class="btn-inner--icon">
@@ -155,24 +132,11 @@
       <div class="row align-items-center justify-content-xl-between">
         <div class="col-xl-6">
           <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2019 <a href="https://www.creative-tim.com/" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+            &copy; <?= date('Y')?> <a href="https://www.creative-tim.com/" class="font-weight-bold ml-1" target="_blank">SISTA</a>
           </div>
         </div>
         <div class="col-xl-6">
-          <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com/" class="nav-link" target="_blank">Creative Tim</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="http://blog.creative-tim.com/" class="nav-link" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
-            </li>
-          </ul>
+          
         </div>
       </div>
     </div>
@@ -184,11 +148,38 @@
   <script src="<?= base_url()?>assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="<?= base_url()?>assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="<?= base_url()?>assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <script src="<?= base_url()?>assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
   <!-- Argon JS -->
   <script src="<?= base_url()?>assets/js/argon.min9f1e.js?v=1.1.0"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="<?= base_url()?>assets/js/demo.min.js"></script>
-  
+  <script>
+  $(document).ready(function(){		
+        $('.custom-control-input').click(function(){
+          if($(this).is(':checked')){
+            $('#pas').attr('type','text');
+          }else{
+            $('#pas').attr('type','password');
+          }
+        });
+      });
+  </script>
+    <script>
+    <?php 
+    $sukses     = $this->session->flashdata('sukses'); 
+    $login      = $this->session->flashdata('logindulu'); 
+    $erorlogin  = $this->session->flashdata('gagallogin'); 
+    $blmactive  = $this->session->flashdata('blmactive'); 
+    if($sukses):?>
+      $.notify("<i class='ni ni-notification-70'></i> Registrasi berhasil tunggu verifikasi admin",{ type: "success"});
+    <?php elseif($login):?>
+      $.notify("<i class='ni ni-notification-70'></i> Silahkan login terlebih dahulu ",{ type: "warning"});
+    <?php elseif($erorlogin):?>
+      $.notify("<i class='ni ni-notification-70'></i> Username dan Password Tidak Sesuai, Coba Lagi ",{ type: "warning"});
+    <?php elseif($blmactive):?>
+      $.notify("<i class='ni ni-notification-70'></i> Akun Anda belum diverifikasi admin",{ type: "warning"});
+    <?php endif;?>
+    </script>
 </body>
 
 </html>

@@ -35,6 +35,10 @@ class Jadwal extends CI_Controller
       }
     
     function daftar($id){
+        if($this->session->userdata('level') != "mahasiswa"){
+            $this->session->set_flashdata('logindulu','tes');
+            redirect('login');
+        }
         $data['title']		     = "Daftar Peserta Seminar Tugas Akhir";
                                   $this->db->join('tb_prodi p','p.id_prodi = s.prodi_id');
         $data['peserta']        = $this->db->get_where('tb_peserta_seminar s',['id_seminar' => $id])->result();

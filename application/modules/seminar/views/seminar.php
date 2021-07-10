@@ -7,7 +7,7 @@
             <div class="col-lg-12">
               <div class="pr-5">
               <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
+                    <div class="col-lg-6 col-10">
                       <h2 class="display-4 text-white font-weight-bold">Sistem Informasi Seminar Tugas Akhir</h2>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
@@ -19,6 +19,7 @@
                       </nav>
                     </div>
                   </div>
+                  <p class="text-white"><strong>Pendaftaran seminar berlaku untuk mahasiswa yang telah mendapat persetujuan dari pembimbing TA</strong></p>
                   <div class="card">
                     <!-- Card header -->
                     <div class="card-header">
@@ -36,7 +37,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input class="form-control" name="nim" placeholder="NIM" type="text">
+                                    <input class="form-control" name="nim" placeholder="NIM" type="text" autocomplete="off" required>
                                   </div>
                                 </div>
                                 <div class="form-group">
@@ -45,7 +46,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                     </div>
-                                    <input class="form-control" name="nama" placeholder="Nama" type="text">
+                                    <input class="form-control" name="nama" placeholder="Nama" type="text" autocomplete="off" required>
                                   </div>
                                 </div>
                               </div> 
@@ -53,7 +54,7 @@
                                 <div class="form-group">
                                 <label class="form-control-label" for="exampleDatepicker">Judul Tugas Akhir</label>
                                   <div class="input-group input-group-merge">
-                                    <textarea class="form-control" name="judul_ta" placeholder="Judul Tugas Akhir" name="" id="" cols="30" rows="6"></textarea>
+                                    <textarea class="form-control" autocomplete="off" required name="judul_ta" placeholder="Judul Tugas Akhir" name="" id="" cols="30" rows="6"></textarea>
                                   </div>
                                 </div>
                               </div>
@@ -63,7 +64,7 @@
                                 <div class="form-group">
                                   <label class="form-control-label" for="exampleDatepicker">Prodi</label>
                                   <div class="input-group input-group-merge">
-                                    <select name="prodi_id" class="form-control">
+                                    <select name="prodi_id" class="form-control" autocomplete="off" required>
                                       <option disabled selected> --- Pilih Prodi --- </option>
                                       <?php foreach($prodi as $row):?>
                                         <option value="<?=$row->id_prodi?>"><?= $row->nama_prodi?></option>
@@ -77,7 +78,7 @@
                                 <div class="form-group">
                                   <label class="form-control-label" for="exampleDatepicker">Seminar</label>
                                   <div class="input-group input-group-merge">
-                                    <select name="seminar_id" class="form-control" >
+                                    <select name="seminar_id" class="form-control" autocomplete="off" required>
                                       <option disabled selected> --- Pilih Seminar --- </option>
                                       <?php foreach($seminar as $row):?>
                                         <option value="<?=$row->id_seminar?>"><?= $row->nama_seminar?></option>
@@ -94,7 +95,7 @@
                                 <div class="form-group">
                                   <label class="form-control-label" for="exampleDatepicker">Tanggal Seminar</label>
                                   <div class="input-group input-group-merge">
-                                  <input class="form-control" name="tgl_seminar" placeholder="Nama" type="date">
+                                  <input class="form-control" name="tgl_seminar" placeholder="Nama" type="date" autocomplete="off" required>
                                   </div>
                                 </div>
                               </div>
@@ -119,7 +120,7 @@
                                 <div class="form-group">
                                   <label class="form-control-label" for="exampleDatepicker">Jam Seminar</label>
                                   <div class="input-group input-group-merge">
-                                  <input class="form-control" name="jam_seminar" placeholder="Nama" type="time">
+                                  <input class="form-control" name="jam_seminar" placeholder="Nama" type="time" autocomplete="off" required> 
                                   </div>
                                 </div>
                               </div>
@@ -128,7 +129,7 @@
                                 <div class="form-group">
                                   <label class="form-control-label" for="exampleDatepicker">Penguji 1</label>
                                   <div class="input-group input-group-merge">
-                                    <select class="form-control" name="penguji1" >
+                                    <select class="form-control" name="penguji1" autocomplete="off" required>
                                     <option disabled selected> --- Pilih Penguji 1 --- </option>
                                       <?php foreach($dosen as $row):?>
                                         <option value="<?=$row->id_dosen?>"><?= $row->nama_dosen?></option>

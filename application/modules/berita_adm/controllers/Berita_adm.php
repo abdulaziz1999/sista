@@ -64,7 +64,7 @@ class Berita_adm extends CI_Controller
                                   <?php  if($berita->status == 'no'):?>
                                     <option value="no" selected>No Publish</option>
                                     <option value="publish">Publish</option>
-                                  <?php elseif($berita->status == 'Ditolak'):?>
+                                  <?php elseif($berita->status == 'publish'):?>
                                     <option value="no">No Publish</option>
                                     <option value="publish" selected>Publish</option>
                                   <?php else:?>
@@ -91,6 +91,7 @@ class Berita_adm extends CI_Controller
             'status'    => $this->input->post('status'),
         ];
         $this->db->insert('tb_berita',$data);
+        $this->session->set_flashdata('sukses','sukses');
         redirect($_SERVER['HTTP_REFERER']);
     }
 
@@ -102,11 +103,13 @@ class Berita_adm extends CI_Controller
         ];
 
         $this->db->update('tb_berita',$data,['id_berita' => $id]);
+        $this->session->set_flashdata('update','update');
         redirect($_SERVER['HTTP_REFERER']);
     }
 
     function delete($id){
         $this->db->delete('tb_berita',['id_berita' => $id]);
+        $this->session->set_flashdata('hapus','hapus');
         redirect($_SERVER['HTTP_REFERER']);
     }
 

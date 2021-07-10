@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+// Sentry\init(['dsn' => 'http://916e0e0c7ab64d83ae0a3600f28e1701@10.10.98.201:8080/4' ]);
 Class My_model extends CI_Model{
 
     function cek_login($u,$p){

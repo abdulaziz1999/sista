@@ -10,10 +10,6 @@ class Login extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        // $this->load->model('Log_model');
-        // $this->load->library('form_validation');
-		// $this->load->model('Pengaduan2_model');	
-		
 		
     }
 
@@ -21,26 +17,30 @@ class Login extends CI_Controller
         $u = $this->input->post('email');
         $p = $this->input->post('password');
 
-        $cek = $this->cek_login($u,$p);
-        if ($cek){
-            foreach ($cek as $row) {
-                $this->session->set_userdata('id_user',$row->id_user);
-				$this->session->set_userdata('nama',$row->nama);
-				$this->session->set_userdata('email',$row->email);
-                $this->session->set_userdata('level',$row->level);
-                
-            }
-            if ($this->session->userdata('level') == "admin") {
-                redirect('dashboard');
-            }elseif ($this->session->userdata('level') == "mahasiswa") {
-                redirect('home');
-            }elseif ($this->session->userdata('level') == "dosen") {
-                redirect('jadwal');
-            }
-        } else{
-            //untuk menendcode kata
-            redirect('login?e='.base64_encode('Username dan Password Tidak Sesuai, Coba Lagi'));
-        } 
+        $cekstatus = $this->db->get_where('tb_user',['email' => $u])->row()->status;
+        if($cekstatus == 'Y'){
+            $cek = $this->cek_login($u,$p);
+            if ($cek){
+                foreach ($cek as $row) {
+                    $this->session->set_userdata('id_user',$row->id_user);
+                    $this->session->set_userdata('nama',$row->nama);
+                    $this->session->set_userdata('email',$row->email);
+                    $this->session->set_userdata('level',$row->level);
+                }
+                if ($this->session->userdata('level') == "admin") {
+                    redirect('dashboard');
+                }elseif ($this->session->userdata('level') == "mahasiswa") {
+                    redirect('home');
+                }
+            } else{
+                $this->session->set_flashdata('gagallogin','tes');
+                redirect($_SERVER['HTTP_REFERER']);
+            } 
+        }else{
+            $this->session->set_flashdata('blmactive','tes');
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+        
 		
     }
 
@@ -50,6 +50,7 @@ class Login extends CI_Controller
         $this->db->from('tb_user');
         $this->db->where('email',$u);
         $this->db->where('password',$pwd);
+        $this->db->where('status','Y');
         $this->db->limit(1);
 
         $query = $this->db->get();

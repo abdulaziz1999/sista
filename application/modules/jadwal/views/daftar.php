@@ -12,13 +12,14 @@
             <div class="col-lg-12">
               <div class="">
                   <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-sm-10">
+                    <div class="col-lg-6 col-10">
                       <h2 class="display-4 text-white font-weight-bold">Sistem Informasi Seminar Tugas Akhir</h2>
                     </div>
                     <div class="col-lg-6 col-sm-2 text-right">
                       <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                           <li class="breadcrumb-item"><a href="<?= base_url()?>"><i class="fas fa-home"></i> Home</a></li>
+                          <li class="breadcrumb-item"><a href="<?= base_url('jadwal')?>">Jadwal</a></li>
                           <li class="breadcrumb-item"><a href="<?= base_url('jadwal/detail/'.$this->uri->segment(3))?>">Detail Jadwal</a></li>
                           <li class="breadcrumb-item active text-green" aria-current="page">Daftar Peserta</li>
                         </ol>

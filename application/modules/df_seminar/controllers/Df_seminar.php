@@ -5,8 +5,7 @@ if (!defined('BASEPATH'))
 
 class Df_seminar extends CI_Controller
 {
-	
-        
+      
     function __construct()
     {
         parent::__construct();
@@ -15,8 +14,7 @@ class Df_seminar extends CI_Controller
         }		
     }
 
-    public function index()
-    {
+    public function index(){
         $data['title']		      = "Daftar Seminar Tugas Akhir";
                                   $this->db->join('tb_seminar sm','sm.id_seminar = s.seminar_id');
         $data['daftar_seminar'] = $this->db->get('tb_daftar_seminar s')->result();
@@ -197,6 +195,7 @@ class Df_seminar extends CI_Controller
             'penguji2'      => $this->input->post('penguji2'),
         ];
         $this->db->insert('tb_daftar_seminar',$data);
+        $this->session->set_flashdata('sukses','sukses');
         redirect($_SERVER['HTTP_REFERER']);
     }
 
@@ -215,11 +214,13 @@ class Df_seminar extends CI_Controller
             'penguji2'      => $this->input->post('penguji2'),
         ];
         $this->db->update('tb_daftar_seminar',$data,['id_df_seminar' => $id]);
+        $this->session->set_flashdata('update','update');
         redirect($_SERVER['HTTP_REFERER']);
     }
 
     function delete($id){
         $this->db->delete('tb_daftar_seminar',['id_df_seminar' => $id]);
+        $this->session->set_flashdata('hapus','hapus');
         redirect($_SERVER['HTTP_REFERER']);
     }
 
@@ -342,7 +343,7 @@ class Df_seminar extends CI_Controller
               </div>
            </div>
       <?php
-  }
+    }
 
     function createPeserta(){
       $data = [

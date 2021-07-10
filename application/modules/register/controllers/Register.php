@@ -24,8 +24,8 @@ class Register extends CI_Controller
     }
     
     function create(){
-        $data = [
-            'nama_mhs'  => $this->input->post('nama_mhs'),
+        $data1 = [
+            'nama_mhs'  => $this->input->post('nama'),
             'nim'       => $this->input->post('nim'),
             'tmp_lahir' => $this->input->post('tmp_lahir'),
             'tgl_lahir' => $this->input->post('tgl_lahir'),
@@ -35,7 +35,7 @@ class Register extends CI_Controller
             'prodi_id'  => $this->input->post('prodi_id'),
         ];
 
-        $this->db->insert('tb_mahasiswa',$data);
+        $this->db->insert('tb_mahasiswa',$data1);
         $id = $this->db->insert_id();
         $data = [
             'nama'          => $this->input->post('nama'),
@@ -46,6 +46,7 @@ class Register extends CI_Controller
         ];
 
         $this->db->insert('tb_user',$data);
+        $this->session->set_flashdata('sukses','tes');
         redirect($_SERVER['HTTP_REFERER']);
     }
 

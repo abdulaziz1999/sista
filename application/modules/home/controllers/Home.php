@@ -10,16 +10,12 @@ class Home extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        // $this->load->model('Log_model');
-        // $this->load->library('form_validation');
-		// $this->load->model('Pengaduan2_model');	
-		
 		
     }
 
     public function index()
     {
-		$data['title']		= "Log Whatsapp Center";
+		$data['title']		= "Home SISTA";
         $this->template->load('template_front/template','home',$data);
         
 	}

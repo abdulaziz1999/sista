@@ -5,8 +5,8 @@
             <div class="col-lg-6 col-7">
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Daftar Seminar</li>
+                  <li class="breadcrumb-item"><a href="<?= site_url('dashboard')?>"><i class="fas fa-home"></i> Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Berita</li>
                 </ol>
               </nav>
             </div> 
@@ -22,7 +22,7 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#tambah">Create</button>
+              <button type="button" class="btn btn-sm btn-info p-2" data-toggle="modal" data-target="#tambah"><i class="fas fa-plus-square"></i> Create</button>
             </div>
             <div class="table-responsive py-4">
               <table class="table table-flush" id="datatable-buttons">
@@ -41,12 +41,12 @@
                     <tr>
                       <td><?= $no++?></td>
                       <td><?= $row->jd_berita?></td>
-                      <td><?= $row->isi_berita?></td>
-                      <td><?= $row->status?></td>
-                      <td><?= longdate_indo(date('d-m-Y',strtotime($row->waktu)))?></td>
+                      <td><?= substr($row->isi_berita,0,50)?></td>
+                      <td><?= $row->status == 'publish' ? '<span class="badge badge-success">Publish</span>' : '<span class="badge badge-danger">No Publish</span>'?></td>
+                      <td><?= date('d M Y H:i:s',strtotime($row->waktu))?></td>
                       <td>
-                          <button type="button" class="btn btn-sm btn-success ml-1" data-toggle="modal" data-target="#edit" onclick="showDataEdit(<?= $row->id_berita?>)"><i class="ni ni-ruler-pencil"></i>&nbsp; Edit</button>
-                          <button type="button" class="btn btn-sm btn-danger ml-1" onclick="deleteSeminar(<?= $row->id_berita?>)"><i class="fas fa-trash"></i>&nbsp; Delete</button>
+                          <button type="button" class="btn btn-sm btn-success ml-1" data-toggle="modal" data-target="#edit" onclick="showBeritaEdit(<?= $row->id_berita?>)"><i class="ni ni-ruler-pencil"></i>&nbsp; Edit</button>
+                          <button type="button" class="btn btn-sm btn-danger ml-1" onclick="deleteBerita(<?= $row->id_berita?>)"><i class="fas fa-trash"></i>&nbsp; Delete</button>
                       </td>
                     </tr>
                     

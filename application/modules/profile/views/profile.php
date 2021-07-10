@@ -1,63 +1,96 @@
-<div class="header bg-primary pb-6">
-      <div class="container-fluid">
-        <div class="header-body">
-          <div class="row align-items-center py-4">
-            <div class="col-lg-6 col-7">
-              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="<?= site_url('dashboard')?>"><i class="fas fa-home"></i> Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">User</li>
-                </ol>
-              </nav>
-            </div> 
-            
+<div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(<?= base_url()?>assets/img/brand/white.png); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-primary opacity-9"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+          <div class="col-lg-12 col-md-10">
+            <h1 class="display-2 text-white">Hello <?= $this->session->userdata('nama')?></h1>
           </div>
         </div>
       </div>
     </div>
-  <div class="container-fluid mt--6">
-      <!-- Table -->
+    <!-- Page content -->
+    <div class="container-fluid mt--9">
       <div class="row">
-        <div class="col">
-          <div class="card">
-            <!-- Card header -->
-            <div class="card-header">
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#tambah">Create</button>
+        <div class="col-xl-4 order-xl-2">
+          <div class="card card-profile">
+            <img src="<?= base_url()?>assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img src="<?= base_url()?>assets/img/theme/team-4.jpg" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="table-responsive py-4">
-              <table class="table table-flush" id="datatable-buttons">
-                <thead class="thead-light">
-                  <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>level</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php $no=1; foreach($user as $row):?>
-                    <tr>
-                      <td><?= $no++?></td>
-                      <td><?= $row->nama?></td>
-                      <td><?= $row->email?></td>
-                      <td><?= $row->level?></td>
-                      <td><?= $row->status == 'Y' ? '<span class="badge badge-success">active</span>' : '<span class="badge badge-danger">inactive</span>' ?></td>
-                      <td>
-                          <button type="button" class="btn btn-sm btn-success ml-1" data-toggle="modal" data-target="#edit" onclick="showUserEdit(<?= $row->id_user?>)"><i class="ni ni-ruler-pencil"></i>&nbsp; Edit</button>
-                          <button type="button" class="btn btn-sm btn-danger ml-1" onclick="deleteUser(<?= $row->id_user?>)"><i class="fas fa-trash"></i>&nbsp; Delete</button>
-                      </td>
-                    </tr>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+               
+              </div>
+            </div>
+            <div class="card-body pt-0">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center">
                     
-                  <?php endforeach;?>
-                </tbody>
-              </table>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                  <h5 class="h3">
+                    <?= $user->nama?><span class="font-weight-light"></span>
+                  </h5>
+                  <div class="h5 font-weight-300">
+                    <i class="ni location_pin mr-2"></i><?= $user->level?>
+                  </div>
+                  <div class="h5 mt-4">
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <h3 class="mb-0">Edit profile </h3>
+                </div>
+                <div class="col-6 text-right">
+                  <!-- <a href="#!" class="btn btn-sm btn-primary">Detail event</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="<?= base_url('profile/update/'.$user->id_user)?>">
+                  <h6 class="heading-small text-muted mb-4">User information</h6>
+                  <div class="pl-lg-4">
+                    <div class="row">
+
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="form-control-label" for="input-username">Nama</label>
+                          <input type="text" id="input-username" name="nama" class="form-control" placeholder="Nama" value="<?= $user->nama?>">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="form-control-label" for="input-email">Email</label>
+                          <input type="email" id="input-email" name="email" class="form-control" placeholder="Email" value="<?= $user->email?>">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="my-4" />
+                  <button type="submit" class="btn btn-md btn-primary">Save Change</button>
+                </form>
             </div>
           </div>
         </div>
       </div>
-  </div>
 
       <!-- Modal Tambah -->
     <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -144,7 +177,6 @@
         </div>
       </div>
     </div>
-    
 
     <!-- Modal edit -->
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
